@@ -1,0 +1,12 @@
+[user]
+	name = Robert Bohne
+	email = robert.bohne@redhat.com
+[push]
+  default = simple
+[core]
+  excludesfile = /Users/rbo/.git/ignore_global
+[diff]
+  tool = vimdiff
+[alias]
+  l = log --oneline --decorate --graph --all
+  bl = branch --list --all -vv

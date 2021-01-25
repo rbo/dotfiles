@@ -1,0 +1,31 @@
+- defaults:
+    link:
+      create: true
+      relink: true
+      
+- clean: ['~']
+
+- shell:
+  - [git submodule update --init --recursive, Installing submodules]
+
+- link:
+    ~/.profile: profile
+    ~/.bash_profile: bash_profile
+    ~/.bashrc: bashrc
+    ~/.bash_logout: bash_logout
+    ~/.gitconfig: gitconfig
+    ~/.ssh/config:
+        path: secret/ssh/config
+        create: true
+    ~/.tmux.conf: tmux.conf
+    ~/.vimrc: vimrc
+    ~/bin:
+        path: bin/
+        create: true
+    ~/.Xmodmap: Xmodmap
+    ~/.Xresources: Xresources
+    ~/.config/i3:
+        path: config/i3/
+        create: true
+
+
