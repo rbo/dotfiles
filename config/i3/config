@@ -53,7 +53,10 @@ bindsym $mod+q kill
 # bindcode $mod+40 exec rofi -modi drun,run -show drun
 # There also is i3-dmenu-desktop which only displays applications shipping a
 # .desktop file. It is a wrapper around dmenu, so you need that installed.
-bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
+bindsym $mod+Shift+d exec --no-startup-id i3-dmenu-desktop
+bindsym $mod+d exec --no-startup-id ~/.config/i3/bin/rofi
+
+
 
 # change focus
 bindsym $mod+j focus left
@@ -176,16 +179,6 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-# Start i3bar to display a workspace bar (plus the system information i3status
-# finds out, if available)
-bar {
-#        i3bar_command $HOME/.config/polybar/launch.sh
-#         # status_command i3status
-         status_command i3status-rs ~/.config/i3/i3status-rs.conf
-         position top
-}
-
-
 exec_always --no-startup-id ~/.config/i3/exec-always.sh
 
 
@@ -202,3 +195,32 @@ exec --no-startup-id xautolock -time 1 -locker ~/.config/i3/bin/lock
 #         bindsym Return mode "default"
 #         bindsym Escape mode "default"
 # }
+#
+#
+
+# 75  -> Space
+#bindsym $mod+space exec --no-startup-id rofi -modi window,run,ssh,combi  -combi-modi window,drun,ssh -show combi
+
+
+# class                 border  backgr. text    indicator child_border
+client.focused          #F56D6D #8F0000 #ffffff #EE0000   #F56D6D
+client.focused_inactive #333333 #5f676a #ffffff #484e50   #5f676a
+client.unfocused        #333333 #222222 #888888 #292d2e   #222222
+client.urgent           #2f343a #EE0000 #ffffff #EE0000   #EE0000
+client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
+#
+client.background       #ffffff
+
+bar {
+#       i3bar_command $HOME/.config/polybar/launch.sh
+        i3bar_command i3bar --transparency
+        status_command i3status-rs ~/.config/i3/i3status-rs.conf
+        position top
+        colors {
+            active_workspace #F56D6D #8F0000 #ffffff
+            focused_workspace #F56D6D #8F0000 #ffffff
+
+        }
+}
+
+
