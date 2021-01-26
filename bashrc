@@ -48,3 +48,8 @@ alias gb='git branch --color '
 alias gbl='git bl'
 alias gc='git checkout'
 alias ga='git add'
+
+
+[[ -f ~/dotfiles/secret/secret-env.sh ]] && source ~/dotfiles/secret/secret-env.sh
+
+
