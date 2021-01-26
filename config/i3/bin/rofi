@@ -1,0 +1,2 @@
+#!/bin/sh
+/usr/bin/rofi -modi window,run,ssh,combi  -combi-modi window,drun,ssh,run -show combi
