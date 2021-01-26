@@ -18,6 +18,7 @@
         path: secret/ssh/config
         create: true
     ~/.tmux.conf: tmux.conf
+    ~/.harvest.yml: secret/harvest.yml
     ~/.vimrc: vimrc
     ~/bin:
         path: bin/
