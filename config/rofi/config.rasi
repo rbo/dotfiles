@@ -14,7 +14,7 @@ configuration {
 	terminal: "rofi-sensible-terminal";
 /*	ssh-client: "ssh";*/
 	ssh-command: "{terminal} -- {ssh-client} {host} [-p {port}]";
-	run-command: "{terminal} -- {cmd}";
+	run-command: "{cmd}";
 /*	run-list-command: "";*/
 	run-shell-command: "{terminal} -- {cmd}";
 /*	window-command: "wmctrl -i -R {window}";*/

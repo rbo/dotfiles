@@ -183,10 +183,11 @@ exec_always --no-startup-id ~/.config/i3/exec-always.sh
 
 
 for_window [instance="timer-for-harvest"] floating enable
+for_window [instance="spotify"] move scratchpad
 
 # 78 -> ScreenLock
-bindcode 78 exec --no-startup-id i3lock -i ~/.config/i3/bin/lock
-exec --no-startup-id xautolock -time 1 -locker ~/.config/i3/bin/lock
+bindcode 78 exec --no-startup-id ~/.config/i3/bin/lock
+exec --no-startup-id xautolock -time 10 -locker ~/.config/i3/bin/lock
 # bindsym $mod+u mode "$mode_special"
 
 # mode "$mode_special" {
@@ -201,6 +202,11 @@ exec --no-startup-id xautolock -time 1 -locker ~/.config/i3/bin/lock
 # 75  -> Space
 #bindsym $mod+space exec --no-startup-id rofi -modi window,run,ssh,combi  -combi-modi window,drun,ssh -show combi
 
+# Make the currently focused window a scratchpad
+bindsym $mod+Shift+minus move scratchpad
+
+# Show the first scratchpad window
+bindsym $mod+minus scratchpad show
 
 # class                 border  backgr. text    indicator child_border
 client.focused          #F56D6D #8F0000 #ffffff #EE0000   #F56D6D
