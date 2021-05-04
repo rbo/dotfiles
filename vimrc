@@ -1,6 +1,6 @@
 filetype off
-call pathogen#runtime_append_all_bundles()
-call pathogen#helptags()
+"call pathogen#runtime_append_all_bundles()
+"call pathogen#helptags()
 filetype plugin on
 
 syntax on
@@ -33,9 +33,9 @@ if v:version >= 703
     set undofile
     set colorcolumn=80,+0
     set relativenumber
-    set undodir=~/.vim/tmp/undo//     " undo files
-    set backupdir=~/.vim/tmp/backup// " backups
-    set directory=~/.vim/tmp/swap//   " swap files
+    set undodir=~/.vim/tmp/undo/     " undo files
+    set backupdir=~/.vim/tmp/backup/ " backups
+    set directory=~/.vim/tmp/swap/   " swap files
     set backup                        " enable backups
     set cursorline
 endif
@@ -59,7 +59,15 @@ set wildignore+=*.pyc                            " Python byte code
 nnoremap <leader>b :CtrlPBuffer<cr>
 nnoremap <leader>m :CtrlPMRUFiles<cr>
 let g:ctrlp_map = '<Leader>p'
-let g:ctrlp_working_path_mode = 0
+let g:ctrlp_working_path_mode = 'r'
+
+" http://sgaul.de/2013/10/17/von-sublime-zu-vim-ein-um-und-einstiegsversuch/
+"  https://github.com/ctrlpvim/ctrlp.vim.git
+set runtimepath^=~/.vim/bundle/ctrlp.vim
+
+nnoremap <C-p> :CtrlP<cr>
+" nnoremap <D-p> <C-p> :CtrlP<cr>
+
 
 " Setting up bundle/NERD_tree
 nnoremap <Leader>n :NERDTreeToggle<cr>
@@ -80,19 +88,19 @@ nnoremap <leader>a :Ack
 if has('gui_running')
     " Don't show the toolbar
     set guioptions-=T
-    set guifont=guifont=Source\ Code\ Pro:h14
+    set guioptions-=m 
+    set guioptions-=r
+    set guioptions-=L
+    set anti enc=utf-8
+    set guifont=Source\ Code\ Pro\ 11
     " Setup startup windows size
     set lines=60
     set columns=90
+    colorscheme desert
 endif
-
+" using Source Code Pro
 
 " Solarized: http://ethanschoonover.com/solarized
 " set term=xterm-256color
 " set background=dark
 
-" http://sgaul.de/2013/10/17/von-sublime-zu-vim-ein-um-und-einstiegsversuch/
-" https://github.com/kien/ctrlp.vim
-set runtimepath^=~/.vim/bundle/ctrlp.vim
-nnoremap <C-p> :CtrlP<cr>
-" nnoremap <D-p> <C-p> :CtrlP<cr>

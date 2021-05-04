@@ -10,3 +10,5 @@
 [alias]
   l = log --oneline --decorate --graph --all
   bl = branch --list --all -vv
+[init]
+	defaultBranch = main
