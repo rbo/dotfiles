@@ -6,6 +6,9 @@
 - clean: ['~']
 
 - shell:
+  - [mkdir -p  ~/.vim/tmp/backup]
+  - [mkdir -p  ~/.vim/tmp/undo]
+  - [mkdir -p  ~/.vim/tmp/swap]
   - [git submodule update --init --recursive, Installing submodules]
 
 - link:
@@ -24,15 +27,20 @@
         path: bin/
         create: true
     ~/.Xmodmap: Xmodmap
-    ~/.Xresources: Xresources
+#    ~/.Xresources: Xresources
     ~/.config/i3:
         path: config/i3/
-        create: true
-    ~/.config/polybar:
-        path: config/polybar/
         create: true
     ~/.config/rofi:
         path: config/rofi/
         create: true
+    ~/.config/kitty:
+        path: config/kitty/
+        create: true
+    ~/.config/bash_completion: config/bash_completion
+    ~/.config/bash_completion.d:
+        path: config/bash_completion.d/
+        create: true
+
 
 
