@@ -249,7 +249,7 @@ bindsym Ctrl+Shift+Print exec --no-startup-id maim --select | xclip -selection c
 input * {
     xkb_layout us
     xkb_variant altgr-intl
-    xkb_options caps:escape
+    xkb_options "caps:escape,compose:menu,compose:prsc"
 }
 
 # Ouput
