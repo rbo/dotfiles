@@ -4,8 +4,8 @@ echo "Source .bashrc";
 
 
 #export TERM=screen-256color
-export HISTSIZE=1000
-export HISTFILESIZE=1000
+export HISTSIZE=10000
+export HISTFILESIZE=10000
 export HISTTIMEFORMAT="%Y-%m-%d %H:%M:%S "
 
 # echo 'setting up PATH,MANPATH,EDITOR,LANG env'
@@ -49,7 +49,7 @@ alias gbl='git bl'
 alias gc='git checkout'
 alias ga='git add'
 
+[[ -f /etc/profile.d/bash_completion.sh ]] && source /etc/profile.d/bash_completion.sh
 
 [[ -f ~/dotfiles/secret/secret-env.sh ]] && source ~/dotfiles/secret/secret-env.sh
-
 
