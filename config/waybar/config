@@ -1,0 +1,177 @@
+[
+    {
+        "name": "topbar",
+        "layer": "top",
+        "position": "top",
+        "height": 30,
+        "modules-left": ["sway/workspaces","sway/mode","battery#bat0", "disk", "memory", "cpu", "temperature", "pulseaudio", "backlight", "idle_inhibitor"],
+        "modules-center": ["sway/window"],
+        "modules-right": ["network#vpn", "network#wifi", "network#ethernet", "network#disconnected", "custom/weather", "clock", "custom/poweroff","tray","custom/harvest"],
+        "sway/window": {
+            "format": "{} ",
+            "on-click": "swaymsg kill"
+        },
+        "idle_inhibitor": {
+            "format": "{icon}",
+            "format-icons": {
+                "activated": "",
+                "deactivated": ""
+            }
+        },
+        "clock": {
+            "interval": 1,
+            "format": "<b>{:%F %T (%l %p ) %Z}</b>",
+            "format-alt": "{:%Y-%m-%d}",
+            "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
+        },
+        "cpu": {
+            "format": " {usage}%",
+            "tooltip": false
+        },
+        "disk": {
+            "format": " {}%",
+            "tooltip-format": "{used} / {total} used"
+        },
+        "memory": {
+            "format": " {}%",
+            "tooltip-format": "{used:0.1f}G / {total:0.1f}G used"
+        },
+        "temperature": {
+            "critical-threshold": 80,
+            "format": "{icon} {temperatureC}°C",
+            "format-icons": ["", "", "", "", ""]
+        },
+        "backlight": {
+            "device": "intel_backlight",
+            "interval": 1,
+            "on-scroll-down": "brightlight -pd 1",
+            "on-scroll-up": "brightlight -pi 1",
+            "format": "{icon} {percent}%",
+            "format-icons": ["", ""],
+            "on-click": "wdisplays"
+        },
+        "battery#bat0": {
+            "bat": "BAT0",
+            "adapter": "AC",
+            "interval": 10,
+            "full-at": 99,
+            "states": {
+                "full": 100,
+                "good": 99,
+                "empty": 5
+            },
+            "format": "{icon} {capacity}%",
+            "formrt-charging": "{icon} {capacity}%",
+            "formrt-discharging": "{icon} {capacity}%",
+            "format-plugged": " {capacity}%",
+            "format-empty": "  ",
+            "format-full": "  ",
+            "format-empty": "",
+            "format-icons": ["", "", "", "", ""]
+        },
+        "network#disconnected": {
+            "tooltip-format": "No connection!",
+            "format-ethernet": "",
+            "format-wifi": "",
+            "format-linked": "",
+            "format-disconnected": "",
+            "on-click": "nm-connection-editor"
+        },
+        "network#ethernet": {
+            "interface": "enp*",
+            "format-ethernet": "",
+            "format-wifi": "",
+            "format-linked": "",
+            "format-disconnected": " ",
+            "tooltip-format": "{ifname}: {ipaddr}/{cidr}",
+            "on-click": "nm-connection-editor"
+        },
+        "network#wifi": {
+            "interface": "wlp*",
+            "format-ethernet": "",
+            "format-wifi": " {essid} ({signalStrength}%)",
+            "format-linked": "",
+            "format-disconnected": "",
+            "tooltip-format": "{ifname}: {ipaddr}/{cidr}",
+            "on-click": "nm-connection-editor"
+        },
+        "network#vpn": {
+            "interface": "tun0",
+            "format": "",
+            "format-disconnected": "noVPN",
+            "tooltip-format": "{ifname}: {ipaddr}/{cidr}",
+            "on-click": "nm-connection-editor"
+        },
+        "pulseaudio": {
+            "scroll-step": 1,
+            "format": "{icon} {volume}%{format_source}",
+            "format-bluetooth": "{icon} {volume}%{format_source}",
+            "format-bluetooth-muted": " {icon}{format_source}",
+            "format-muted": " {format_source}",
+            "format-source": "  {volume}%",
+            "format-source-muted": " ",
+            "format-icons": {
+                "headphone": "",
+                "phone": "",
+                "portable": "",
+                "car": "",
+                "default": ["", "", ""]
+            },
+            "on-click": "gnome-control-center sound"
+        },
+        "custom/weather": {
+            "return-type": "json",
+            "exec": "bash $HOME/.config/waybar/scripts/weather.sh",
+            "interval": 300,
+            "on-click": "xdg-open https://wttr.in"
+        },
+        "custom/poweroff": {
+            "tooltip": false,
+            "format": "⏻",
+            "on-click": "bash $HOME/.config/waybar/scripts/poweroff.sh"
+        },
+        "custom/harvest": {
+            "max-length":25,
+            "format": "{icon} {}",
+            "format-icons": {
+                "Paused": " ",
+                "Running": " ",
+            },
+            "exec": "bash $HOME/.config/waybar/scripts/harvest.sh",
+            //"exec": "bash $HOME/.config/waybar/scripts/weather.sh",
+            "return-type": "json",
+            "interval": 10,
+            "on-click": "toolbox run timer-for-harvest",
+        },
+        "sway/mode": {
+            "format": "<span style=\"italic\">{}</span>"
+        },
+        "tray": {
+            "icon-size": 13,
+            "spacing": 10
+        }
+    }
+//   ,{
+//        "name": "bottombar",
+//        "layer": "top",
+//        "position": "bottom",
+//        "height": 30,
+//        "modules-left": ["tray"],
+//        "modules-center": ["wlr/taskbar"],
+//        "modules-right": ["sway/workspaces", "sway/mode"],
+//        "tray": {
+//            "icon-size": 13,
+//            "spacing": 10
+//        },
+//        "wlr/taskbar": {
+//            "format": "{icon} {app_id}",
+//            "icon-size": 13,
+//            "tooltip": false,
+//            "on-click": "activate",
+//            "on-click-right": "close"
+//        },
+//        "sway/mode": {
+//            "format": "<span style=\"italic\">{}</span>"
+//        }
+//    }
+]

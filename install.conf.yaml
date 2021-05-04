@@ -40,6 +40,20 @@
     ~/.config/bash_completion.d:
         path: config/bash_completion.d/
         create: true
+    ~/.config/environment.d:
+        path: config/environment.d/
+        create: true
+    ~/.config/sway:
+        path: config/sway/
+        create: true
+    ~/.config/waybar:
+        path: config/waybar/
+        create: true
+    ~/.config/mako:
+        path: config/mako/
+        create: true
+
+
 
 
 
