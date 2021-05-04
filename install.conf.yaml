@@ -27,7 +27,6 @@
         path: bin/
         create: true
     ~/.Xmodmap: Xmodmap
-#    ~/.Xresources: Xresources
     ~/.config/i3:
         path: config/i3/
         create: true
