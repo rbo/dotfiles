@@ -36,7 +36,7 @@ exec --no-startup-id /usr/bin/mako
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10%
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10%
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle &&
-bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle 
+bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -252,12 +252,16 @@ input * {
     xkb_options "caps:escape,compose:menu,compose:prsc"
 }
 
+input "1739:30383:DLL075B:01_06CB:76AF_Touchpad" {
+    tap enabled
+}
+
 # Ouput
 #
 output "Sharp Corporation 0x144A 0x00000000" scale 2
 output "Sharp Corporation 0x144A 0x00000000" pos 0 0
-output "Dell Inc. DELL U2721DE 5RJ8023"      pos 1600 0 
-output "Dell Inc. DELL U2715H GH85D68R0XRS"  pos 4160 0 
+output "Dell Inc. DELL U2721DE 5RJ8023"      pos 1600 0
+output "Dell Inc. DELL U2715H GH85D68R0XRS"  pos 4160 0
 output * bg /home/$USER/.config/sway/background-redhat-3840x2160.png fit
 #
 
