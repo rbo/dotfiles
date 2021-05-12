@@ -2,7 +2,7 @@
     link:
       create: true
       relink: true
-      
+
 - clean: ['~']
 
 - shell:
@@ -52,7 +52,9 @@
     ~/.config/mako:
         path: config/mako/
         create: true
-
+    ~/.config/wofi:
+        path: config/wofi/
+        create: true
 
 
 
