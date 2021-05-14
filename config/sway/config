@@ -237,19 +237,23 @@ bar {
 
 # https://gist.github.com/dianjuar/ee774561a8bc02b077989bc17424a19f
 # Screenshots
-bindsym Print exec --no-startup-id maim "/home/$USER/Pictures/screenshot-$(date +%F-%T).png"
-bindsym $mod+Print exec --no-startup-id maim --window $(xdotool getactivewindow) "/home/$USER/Pictures/screenshot-$(date +%F-%T).png"
-bindsym Shift+Print exec --no-startup-id maim --select "/home/$USER/Pictures/screenshot-$(date +%F-%T).png"
+#bindsym $mod+Print exec --no-startup-id maim --window $(xdotool getactivewindow) "/home/$USER/Pictures/screenshot-$(date +%F-%T).png"
+#bindsym Shift+Print exec --no-startup-id maim --select "/home/$USER/Pictures/screenshot-$(date +%F-%T).png"
 
 ## Clipboard Screenshots
-bindsym Ctrl+Print exec --no-startup-id maim | xclip -selection clipboard -t image/png
-bindsym Ctrl+$mod+Print exec --no-startup-id maim --window $(xdotool getactivewindow) | xclip -selection clipboard -t image/png
-bindsym Ctrl+Shift+Print exec --no-startup-id maim --select | xclip -selection clipboard -t image/png
+#bindsym Ctrl+Print exec --no-startup-id maim | xclip -selection clipboard -t image/png
+#bindsym Ctrl+$mod+Print exec --no-startup-id maim --window $(xdotool getactivewindow) | xclip -selection clipboard -t image/png
+#bindsym Ctrl+Shift+Print exec --no-startup-id maim --select | xclip -selection clipboard -t image/png
+
+# Screenshots
+# current window
+bindsym Ctrl+Shift+1 exec --no-startup-id ~/.config/sway/screenshot.sh focused_window
+bindsym Print exec --no-startup-id ~/.config/sway/screenshot.sh wofi
 
 input * {
     xkb_layout us
     xkb_variant altgr-intl
-    xkb_options "caps:escape,compose:menu,compose:prsc"
+    xkb_options "caps:escape,compose:menu"
 }
 
 input "1739:30383:DLL075B:01_06CB:76AF_Touchpad" {
