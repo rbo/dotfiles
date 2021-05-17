@@ -1,6 +1,11 @@
 #!/usr/bin/env bash
 #set -x
-TEMP_DIR=$(mktemp -d)
+#TEMP_DIR=$(mktemp -d)
+TEMP_DIR=/tmp/screenshots/
+if [ ! -d $TEMP_DIR ] ; then
+    mkdir -p $TEMP_DIR
+fi
+
 FILENAME=$(date "+%F-%H-%M-%S-%s.png")
 
 SOURCE=$1
