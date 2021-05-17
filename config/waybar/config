@@ -117,7 +117,7 @@
                 "car": "",
                 "default": ["", "", ""]
             },
-            "on-click": "gnome-control-center sound"
+            "on-click": "pavucontrol"
         },
         "custom/weather": {
             "return-type": "json",
