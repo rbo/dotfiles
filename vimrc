@@ -104,3 +104,5 @@ endif
 " set term=xterm-256color
 " set background=dark
 
+autocmd BufWritePre * :%s/\s\+$//e
+
