@@ -33,10 +33,13 @@ exec --no-startup-id nm-applet
 exec --no-startup-id /usr/bin/mako
 # Use pactl to adjust volume in PulseAudio.
 #set $refresh_i3status killall -SIGUSR1 i3status
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10%
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10%
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle &&
-bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle
+bindsym XF86AudioRaiseVolume exec --no-startup-id amixer -q sset Master 3%+
+bindsym XF86AudioLowerVolume exec --no-startup-id amixer -q sset Master 3%-
+bindsym XF86AudioMute exec --no-startup-id amixer -q sset Master toggle
+bindsym XF86MonBrightnessUp exec --no-startup-id brightlight -i 100
+bindsym XF86MonBrightnessDown exec --no-startup-id brightlight -d 100
+
+#bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -187,8 +190,8 @@ for_window [instance="spotify"] move scratchpad
 
 
 # 78 -> ScreenLock
-bindcode 78 exec --no-startup-id ~/.config/i3/bin/lock
-exec --no-startup-id xautolock -time 10 -locker ~/.config/i3/bin/lock
+bindcode 78 exec --no-startup-id ~/.config/sway/lock
+bindcode 127 exec --no-startup-id ~/.config/sway/lock
 
 bindsym $mod+x move workspace to output right
 
@@ -248,12 +251,12 @@ bar {
 # Screenshots
 # current window
 bindsym Ctrl+Shift+1 exec --no-startup-id ~/.config/sway/screenshot.sh focused_window
-bindsym Print exec --no-startup-id ~/.config/sway/screenshot.sh wofi
+bindsym Ctrl+Shift+2 exec --no-startup-id ~/.config/sway/screenshot.sh wofi
 
 input * {
     xkb_layout us
     xkb_variant altgr-intl
-    xkb_options "caps:escape,compose:menu"
+    xkb_options "caps:escape,compose:menu,compose:prsc"
 }
 
 input "1739:30383:DLL075B:01_06CB:76AF_Touchpad" {

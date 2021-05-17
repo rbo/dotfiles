@@ -1,0 +1,2 @@
+#!/usr/bin/env bash
+swaylock -k -e -f -i  ~/.config/i3/background-redhat-2560x1440-lock.png
