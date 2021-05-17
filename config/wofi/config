@@ -2,4 +2,3 @@ mode=drun,run
 allow_images=true
 allow_markup=true
 image_size=16
-key_expand=e
