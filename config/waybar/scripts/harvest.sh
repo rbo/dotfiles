@@ -11,9 +11,9 @@ if [ "$running_raw" !=  "null" ]; then
 fi
 
 if [ "$running" == "" ]; then
-  class="Paused"
+  class="paused"
 else
-  class="Running"
+  class="running"
 fi
 tooltip="$(/home/$USER/.config/waybar/scripts/harvest |
     sed 's/\\/\\\\/g' |

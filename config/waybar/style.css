@@ -1,7 +1,7 @@
 * {
     border: none;
     border-radius: 0;
-    font-family: "DejaVu Sans Condensed", "FontAwesome 5 Free Solid";
+    font-family: "DejaVu Sans Condensed", "Font Awesome 5 Free Solid";
     font-size: 13px;
     min-height: 0;
 }
@@ -71,8 +71,18 @@ window#waybar.empty {
 #temperature,
 #tray {
     padding: 0 6px;
-    margin: 0 0px;
+    margin: 2px;
     color: #ffffff;
+    background: rgba(43, 48, 59, 1);
+    border-radius: 2px;
+}
+
+#custom-harvest.running {
+    background: rgba(0, 255, 0, 0.5);
+}
+
+#custom-harvest.paused {
+    background: rgba(250, 0, 0, 0.5);
 }
 
 @keyframes blink {
