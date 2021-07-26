@@ -29,9 +29,11 @@ window#waybar.empty {
 
 
 #workspaces button {
-    padding: 0 5px;
-    background-color: transparent;
+    padding: 0 6px;
+    margin: 2px;
+    background: rgba(43, 48, 59, 1);
     color: #ffffff;
+    border-radius: 2px;
 }
 
 #workspaces button:hover {
