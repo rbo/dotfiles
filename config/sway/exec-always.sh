@@ -12,7 +12,8 @@ export GNOME_KEYRING_CONTROL GNOME_KEYRING_PID GPG_AGENT_INFO SSH_AUTH_SOCK
 
 
 swayidle -w \
-  timeout 300  ~/.config/sway/lock
+  timeout 300  ~/.config/sway/lock \
+  before-sleep ~/.config/sway/lock
 
 #/usr/libexec/xdg-desktop-portal -r &
 #/usr/libexec/xdg-desktop-portal-wlr -r &
