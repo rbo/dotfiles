@@ -19,7 +19,7 @@ EOF
         systemctl suspend
         ;;
     "Lock")
-        loginctl lock-session
+        ~/.config/sway/lock
         ;;
     "Log off")
         swaymsg exit

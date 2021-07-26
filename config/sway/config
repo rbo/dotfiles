@@ -46,6 +46,7 @@ floating_modifier $mod
 
 # start a terminal
 bindsym $mod+Return exec alacritty
+#bindsym $mod+Return exec kitty
 
 # kill focused window
 bindsym $mod+q kill
@@ -219,6 +220,10 @@ bindsym $mod+Shift+minus move scratchpad
 # Show the first scratchpad window
 bindsym $mod+minus scratchpad show
 
+default_border pixel
+smart_gaps off
+gaps inner 10
+
 # class                 border  backgr. text    indicator child_border
 client.focused          #F56D6D #8F0000 #ffffff #EE0000   #F56D6D
 client.focused_inactive #333333 #5f676a #ffffff #484e50   #5f676a
@@ -278,3 +283,5 @@ include /etc/sway/config.d/*
 
 exec systemctl --user import-environment
 exec systemctl --user restart xdg-desktop-portal-gtk.service xdg-desktop-portal-wlr.servic
+
+

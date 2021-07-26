@@ -3,27 +3,30 @@
     border-radius: 0;
     font-family: "DejaVu Sans Condensed", "Font Awesome 5 Free Solid";
     font-size: 13px;
-    min-height: 0;
+    min-height: 30px;
 }
 
 window#waybar {
-    background-color: rgba(43, 48, 59, 0.5);
+    background: transparent;
     color: #ffffff;
     transition-property: background-color;
     transition-duration: .5s;
+}
+
+window > box {
+    margin-top: 10px;
+    margin-bottom: 0px;
+    margin-right: 10px;
+    margin-left: 10px;
+    background-color: rgba(43, 48, 59, 0.3);
+    border: 1px solid #8F0000;
+    color: white;
 }
 
 window#waybar.empty {
     color: rgba(0,0,0,0);
 }
 
-.topbar {
-    border-bottom: 1px solid #8F0000;
-}
-
-.bottombar {
-    border-top: 3px solid rgba(100, 114, 125, 1);
-}
 
 #workspaces button {
     padding: 0 5px;
@@ -38,7 +41,6 @@ window#waybar.empty {
 
 #workspaces button.focused {
     background-color: #8F0000;
-    box-shadow: inset 0 3px #ffffff;
 }
 
 #workspaces button.urgent {
@@ -47,7 +49,7 @@ window#waybar.empty {
 
 #mode {
     background-color: #64727D;
-    border-top: 3px solid #ffffff;
+    border: 1px solid #ffffff;
 }
 
 #backlight,
@@ -75,6 +77,14 @@ window#waybar.empty {
     color: #ffffff;
     background: rgba(43, 48, 59, 1);
     border-radius: 2px;
+}
+
+#network.linked {
+    background: rgba(0, 255, 0, 0.5);
+}
+
+#network.disconnected {
+    background: rgba(250, 0, 0, 0.5);
 }
 
 #custom-harvest.running {

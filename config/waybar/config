@@ -3,10 +3,10 @@
         "name": "topbar",
         "layer": "top",
         "position": "top",
-        "height": 30,
+        "height": 40,
         "modules-left": ["sway/workspaces","sway/mode","battery#bat0", "disk", "memory", "cpu", "temperature", "pulseaudio", "backlight", "idle_inhibitor"],
         "modules-center": ["sway/window"],
-        "modules-right": ["network#vpn", "network#wifi", "network#ethernet", "network#disconnected", "custom/weather", "clock", "custom/poweroff","tray","custom/harvest"],
+        "modules-right": [ "network#wifi", "network#ethernet", "custom/weather", "clock", "custom/poweroff","tray","custom/harvest"],
         "sway/window": {
             "format": "{} ︁",
             "on-click": "swaymsg kill"
@@ -61,7 +61,7 @@
                 "empty": 5
             },
             "format": "{icon} {capacity}%",
-            "formrt-charging": "{icon} {capacity}%",
+            "formrt-charging": " : {icon} {capacity}%",
             "formrt-discharging": "{icon} {capacity}%",
             "format-plugged": " {capacity}%",
             "format-empty": "  ",
@@ -78,19 +78,19 @@
         },
         "network#ethernet": {
             "interface": "enp*",
-            "format-ethernet": "",
+            "format-ethernet": "  ",
             "format-wifi": "",
             "format-linked": "",
-            "format-disconnected": " ",
+            "format-disconnected": "  Disconnected ",
             "tooltip-format": "{ifname}: {ipaddr}/{cidr}",
             "on-click": "nm-connection-editor"
         },
         "network#wifi": {
             "interface": "wlp*",
             "format-ethernet": "",
-            "format-wifi": " {essid} ({signalStrength}%)",
+            "format-wifi": "  {essid} ({signalStrength}%)",
             "format-linked": "",
-            "format-disconnected": "",
+            "format-disconnected": "  Disconnected",
             "tooltip-format": "{ifname}: {ipaddr}/{cidr}",
             "on-click": "nm-connection-editor"
         },
