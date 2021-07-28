@@ -1,2 +1,10 @@
 #!/usr/bin/env bash
+
+revert() {
+  swaymsg "output * dpms on"
+}
+trap revert SIGHUP SIGINT SIGTERM # How to fix this line?
+swaymsg "output * dpms off"
 swaylock -k -e -f -i  ~/.config/i3/background-redhat-2560x1440-lock.png
+revert
+
