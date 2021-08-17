@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 #set -x
 #TEMP_DIR=$(mktemp -d)
-TEMP_DIR=/tmp/screenshots/
+TEMP_DIR=$(xdg-user-dir PICTURES)/Screenshots
 if [ ! -d $TEMP_DIR ] ; then
     mkdir -p $TEMP_DIR
 fi
