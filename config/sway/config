@@ -9,6 +9,7 @@
 #
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
+# Get list of Mod: xmodmap -pm
 set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
@@ -261,7 +262,8 @@ bindsym Ctrl+Shift+2 exec --no-startup-id ~/.config/sway/screenshot.sh wofi
 input * {
     xkb_layout us
     xkb_variant altgr-intl
-    xkb_options "caps:escape,compose:menu,compose:prsc"
+    #  localectl list-x11-keymap-options  | grep compose
+    xkb_options "caps:escape,compose:menu,compose:prsc,compose:rwin"
 }
 
 input "1739:30383:DLL075B:01_06CB:76AF_Touchpad" {
