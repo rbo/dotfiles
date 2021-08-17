@@ -2,6 +2,7 @@
 [ -z "$PS1" ] && return
 echo "Source .bashrc";
 
+export BASH_COMPLETION_COMPAT_DIR=~/.config/bash_completion.d/
 
 #export TERM=screen-256color
 export HISTSIZE=10000
@@ -9,7 +10,7 @@ export HISTFILESIZE=10000
 export HISTTIMEFORMAT="%Y-%m-%d %H:%M:%S "
 
 # echo 'setting up PATH,MANPATH,EDITOR,LANG env'
-export PATH=~/bin:/usr/local/sbin:/usr/local/bin:$PATH
+export PATH=~/bin:~/.local/bin:/usr/local/sbin:/usr/local/bin:$PATH
 export EDITOR=vim
 
 function _update_terminal_title() {
@@ -49,7 +50,13 @@ alias gbl='git bl'
 alias gc='git checkout'
 alias ga='git add'
 
-[[ -f /etc/profile.d/bash_completion.sh ]] && source /etc/profile.d/bash_completion.sh
+[[ $PS1 && -f /etc/profile.d/bash_completion.sh ]] && \
+    . /etc/profile.d/bash_completion.sh
+
+[[ $PS1 && -f /usr/share/bash-completion/bash_completion ]] && \
+    . /usr/share/bash-completion/bash_completion
 
 [[ -f ~/dotfiles/secret/secret-env.sh ]] && source ~/dotfiles/secret/secret-env.sh
+[[ -f ~/bin/switch.sh ]] && source ~/bin/switch.sh
+
 
