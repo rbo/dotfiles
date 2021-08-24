@@ -55,6 +55,10 @@
     ~/.config/wofi:
         path: config/wofi/
         create: true
+    ~/.config/pkcs11:
+        path: config/pkcs11/
+        create: true
+
 
 
 
