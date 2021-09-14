@@ -6,7 +6,7 @@
         "height": 40,
         "modules-left": ["sway/workspaces","sway/mode","battery#bat0", "disk", "memory", "cpu", "temperature", "pulseaudio", "backlight", "idle_inhibitor"],
         "modules-center": ["sway/window"],
-        "modules-right": [ "network#wifi", "network#ethernet", "custom/weather", "clock", "custom/poweroff","tray","custom/harvest"],
+        "modules-right": [ "network#wifi", "network#ethernet", "clock", "custom/poweroff","tray","custom/harvest"],
         "sway/window": {
             "format": "{} ︁",
             "on-click": "swaymsg kill"
