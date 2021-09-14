@@ -58,7 +58,9 @@
     ~/.config/pkcs11:
         path: config/pkcs11/
         create: true
-
+    ~/.config/gmail-yaml-filters:
+        path: secret/gmail-yaml-filters/
+        create: true
 
 
 
