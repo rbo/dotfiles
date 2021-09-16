@@ -61,6 +61,8 @@
     ~/.config/gmail-yaml-filters:
         path: secret/gmail-yaml-filters/
         create: true
+    ~/.config/imv:
+        path: config/imv/
 
 
 

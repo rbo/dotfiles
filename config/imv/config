@@ -1,0 +1,4 @@
+[options]
+overlay = true
+overlay_font = Monospace:10
+overlay_text = "[$( basename $imv_current_file )]"
