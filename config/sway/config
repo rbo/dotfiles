@@ -188,7 +188,8 @@ exec_always --no-startup-id ~/.config/sway/exec-always.sh
 # List window: i3-msg -t get_tree
 for_window [instance="timer-for-harvest"] floating enable
 for_window [instance="gnome-control-center"] floating enable
-for_window [instance="spotify"] move scratchpad
+# for_window [instance="spotify"] move scratchpad
+
 
 
 # 78 -> ScreenLock
@@ -266,16 +267,17 @@ input * {
     xkb_options "caps:escape,compose:menu,compose:prsc,compose:rwin"
 }
 
-input "1739:30383:DLL075B:01_06CB:76AF_Touchpad" {
+input "1739:0:Synaptics_TM3145-005" {
     tap enabled
 }
 
 # Ouput
 #
-output "Sharp Corporation 0x144A 0x00000000" scale 2
-output "Sharp Corporation 0x144A 0x00000000" pos 0 0
-output "Dell Inc. DELL U2721DE 5RJ8023"      pos 1600 0
-output "Dell Inc. DELL U2715H GH85D68R0XRS"  pos 4160 0
+#output "Sharp Corporation 0x144A 0x00000000" scale 2
+output "Unknown 0x0521 0x00000000" pos 0 0
+output "Dell Inc. DELL U2721DE 5RJ8023"      pos 1920 0
+output "Dell Inc. DELL U2715H GH85D68R0XRS"  pos 4480 0
+
 output * bg /home/$USER/.config/sway/background-redhat-3840x2160.png fit
 #
 
