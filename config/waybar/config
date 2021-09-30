@@ -2,11 +2,13 @@
     {
         "name": "topbar",
         "layer": "top",
+        // swaymsg -t get_outputs | jq '.[] | .name'
+        // "output": ["eDP-1","DP-4","DP-5","DP-6","DP-7"],
         "position": "top",
         "height": 40,
-        "modules-left": ["sway/workspaces","sway/mode","battery#bat0", "disk", "memory", "cpu", "temperature", "pulseaudio", "backlight", "idle_inhibitor"],
+        "modules-left": ["sway/workspaces","sway/mode","disk","battery#bat0", "battery#bat1", "pulseaudio", "backlight", "idle_inhibitor"],
         "modules-center": ["sway/window"],
-        "modules-right": [ "network#wifi", "network#ethernet", "clock", "custom/poweroff","tray","custom/harvest"],
+        "modules-right": [ "network#phone","network#ethernet","network#wifi","network#vpn", "clock", "custom/poweroff","tray","custom/harvest"],
         "sway/window": {
             "format": "{} ︁",
             "on-click": "swaymsg kill"
@@ -29,8 +31,12 @@
             "tooltip": false
         },
         "disk": {
-            "format": " {}%",
-            "tooltip-format": "{used} / {total} used"
+            "format": "  {free} ",
+            "states": {
+                "warning": 85,
+                "critical": 95
+            },
+            "tooltip-format": "{used} of {total} used"
         },
         "memory": {
             "format": "︁ {}%",
@@ -56,9 +62,25 @@
             "interval": 1,
             "full-at": 99,
             "states": {
-                "full": 100,
-                "good": 99,
-                "empty": 5
+                "warning": 30,
+                "critical": 15
+            },
+            "format": "{icon} {capacity}%",
+            "formrt-charging": " : {icon} {capacity}%",
+            "formrt-discharging": "{icon} {capacity}%",
+            "format-plugged": " {capacity}%",
+            "format-empty": "  ",
+            "format-full": "  ",
+            "format-icons": ["", "", "", "", ""]
+        },
+        "battery#bat1": {
+            "bat": "BAT1",
+            "adapter": "AC",
+            "interval": 1,
+            "full-at": 99,
+            "states": {
+                "warning": 30,
+                "critical": 15
             },
             "format": "{icon} {capacity}%",
             "formrt-charging": " : {icon} {capacity}%",
@@ -77,11 +99,10 @@
             "on-click": "nm-connection-editor"
         },
         "network#ethernet": {
-            "interface": "enp*",
+            "interface": "enp0s31*",
             "format-ethernet": "  ",
-            "format-wifi": "",
             "format-linked": "",
-            "format-disconnected": "  Disconnected ",
+            "format-disconnected": "  ",
             "tooltip-format": "{ifname}: {ipaddr}/{cidr}",
             "on-click": "nm-connection-editor"
         },
@@ -90,7 +111,7 @@
             "format-ethernet": "",
             "format-wifi": "  {essid} ({signalStrength}%)",
             "format-linked": "",
-            "format-disconnected": "  Disconnected",
+            "format-disconnected": "  ",
             "tooltip-format": "{ifname}: {ipaddr}/{cidr}",
             "on-click": "nm-connection-editor"
         },
@@ -98,6 +119,13 @@
             "interface": "tun0",
             "format": "︁ ",
             "format-disconnected": " ︁",
+            "tooltip-format": "{ifname}: {ipaddr}/{cidr}",
+            "on-click": "nm-connection-editor"
+        },
+        "network#phone": {
+            "interface": "enp0s20f0u2c4i2",
+            "format": "  ",
+            "format-disconnected": "  ",
             "tooltip-format": "{ifname}: {ipaddr}/{cidr}",
             "on-click": "nm-connection-editor"
         },

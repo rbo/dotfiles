@@ -56,6 +56,7 @@ window#waybar.empty {
 
 #backlight,
 #battery.bat0,
+#battery.bat1,
 #clock,
 #cpu,
 #custom-mail,
@@ -70,6 +71,7 @@ window#waybar.empty {
 #network.wifi,
 #network.ethernet,
 #network.disconnected,
+#network.phone,
 #pulseaudio,
 #taskbar,
 #temperature,
@@ -82,6 +84,15 @@ window#waybar.empty {
 }
 
 #network.linked {
+    background: rgba(238, 255, 0, 0.795);
+}
+
+#network.vpn,
+#network.wifi,
+#network.ethernet,
+#network.disconnected,
+#network.phone,
+#network {
     background: rgba(0, 255, 0, 0.5);
 }
 
@@ -97,6 +108,20 @@ window#waybar.empty {
     background: rgba(250, 0, 0, 0.5);
 }
 
+#disk.warning {
+    background: rgba(255, 234, 108, 0.5);
+}
+
+
+#disk.critical {
+    background: rgba(250, 0, 0, 0.5);
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
 @keyframes blink {
     to {
         background-color: #ffffff;
@@ -104,7 +129,23 @@ window#waybar.empty {
     }
 }
 
-#battery.bat2.critical:not(.charging) {
+#battery.charging {
+    background: rgba(0, 255, 0, 0.5);
+    color: white;
+}
+
+#battery.warning:not(.charging) {
+    background: #f53c3c;
+    color: white;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+
+#battery.critical:not(.charging) {
     background-color: #f53c3c;
     color: #ffffff;
     animation-name: blink;
