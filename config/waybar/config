@@ -6,7 +6,7 @@
         // "output": ["eDP-1","DP-4","DP-5","DP-6","DP-7"],
         "position": "top",
         "height": 40,
-        "modules-left": ["sway/workspaces","sway/mode","disk","battery#bat0", "battery#bat1", "pulseaudio", "backlight", "idle_inhibitor"],
+        "modules-left": ["sway/workspaces","sway/mode","disk","battery#bat0", "battery#bat1","custom/btbattery", "pulseaudio","custom/spotifyd", "backlight", "idle_inhibitor"],
         "modules-center": ["sway/window"],
         "modules-right": [ "network#phone","network#ethernet","network#wifi","network#vpn", "clock", "custom/poweroff","tray","custom/harvest"],
         "sway/window": {
@@ -146,6 +146,14 @@
             },
             "on-click": "pavucontrol"
         },
+        // https://github.com/seabassapologist/gobbl
+        "custom/btbattery": {
+            "format": "{}",
+            "exec": "$HOME/.config/waybar/scripts/gobbl -w -i",
+            "return-type": "json",
+            "on-click": "$HOME/.config/waybar/scripts/gobbl -w -i",
+            "interval": 500
+        },
         "custom/weather": {
             "return-type": "json",
             "exec": "bash $HOME/.config/waybar/scripts/weather.sh",
@@ -175,6 +183,16 @@
         "tray": {
             "icon-size": 13,
             "spacing": 10
+        },
+        // https://github.com/seabassapologist/untitled-spotifyd-controller
+        "custom/spotifyd": {
+            "format": " {}",
+            "return-type": "json",
+            "exec": "$HOME/.config/waybar/scripts/untitled-spotifyd-controller -o waybar",
+            "on-click": "$HOME/.config/waybar/scripts/untitled-spotifyd-controller -c PlayPause",
+            "on-click-right": "$HOME/.config/waybar/scripts/untitled-spotifyd-controller -c Next",
+            "on-click-middle": "$HOME/.config/waybar/scripts/untitled-spotifyd-controller -c Previous",
+            "interval": 2
         }
     }
 //   ,{

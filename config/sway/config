@@ -185,6 +185,13 @@ bindsym $mod+r mode "resize"
 
 exec_always --no-startup-id ~/.config/sway/exec-always.sh
 
+
+# Clipman
+#  https://github.com/yory8/clipman
+exec ~/.config/sway/clipman restore
+exec wl-paste -t text --watch ~/.config/sway/clipman store
+bindsym $mod+Insert exec ~/.config/sway/clipman  pick --notify -t wofi --primary
+
 # List window: i3-msg -t get_tree
 for_window [instance="timer-for-harvest"] floating enable
 for_window [instance="gnome-control-center"] floating enable
@@ -194,6 +201,7 @@ for_window [instance="gnome-control-center"] floating enable
 
 # 78 -> ScreenLock
 bindcode 78 exec --no-startup-id ~/.config/sway/lock
+# 127
 bindcode 127 exec --no-startup-id ~/.config/sway/lock
 
 bindsym $mod+x move workspace to output right
