@@ -276,7 +276,7 @@ input * {
 }
 
 input "1739:0:Synaptics_TM3145-005" {
-    tap enabled
+    tap disabled
 }
 
 # Ouput
