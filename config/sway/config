@@ -230,6 +230,9 @@ bindsym $mod+Shift+minus move scratchpad
 # Show the first scratchpad window
 bindsym $mod+minus scratchpad show
 
+
+bindsym $mod+c exec --no-startup-id ~/.config/waybar/scripts/clockify-toogle.sh
+
 default_border pixel
 smart_gaps off
 gaps inner 10

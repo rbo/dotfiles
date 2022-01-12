@@ -28,6 +28,10 @@ window#waybar.empty {
 }
 
 
+#workspaces {
+    margin-right: 10px;
+}
+
 #workspaces button {
     padding: 0 6px;
     margin: 2px;
@@ -62,7 +66,7 @@ window#waybar.empty {
 #custom-mail,
 #custom-poweroff,
 #custom-weather,
-#custom-harvest,
+#custom-clockify,
 #custom-btbattery,
 #custom-spotifyd,
 #disk,
@@ -102,11 +106,11 @@ window#waybar.empty {
     background: rgba(250, 0, 0, 0.5);
 }
 
-#custom-harvest.running {
+#custom-clockify.running {
     background: rgba(0, 255, 0, 0.5);
 }
 
-#custom-harvest.paused {
+#custom-clockify.paused {
     background: rgba(250, 0, 0, 0.5);
 }
 

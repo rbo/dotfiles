@@ -21,7 +21,7 @@
         path: secret/ssh/config
         create: true
     ~/.tmux.conf: tmux.conf
-    ~/.harvest.yml: secret/harvest.yml
+    ~/.clockify-cli.yaml: secret/clockify-cli.yaml
     ~/.vimrc: vimrc
     ~/bin:
         path: bin/

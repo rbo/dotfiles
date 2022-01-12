@@ -6,9 +6,12 @@
         // "output": ["eDP-1","DP-4","DP-5","DP-6","DP-7"],
         "position": "top",
         "height": 40,
-        "modules-left": ["sway/workspaces","sway/mode","disk","battery#bat0", "battery#bat1","custom/btbattery", "pulseaudio","custom/spotifyd", "backlight", "idle_inhibitor"],
-        "modules-center": ["sway/window"],
-        "modules-right": [ "network#phone","network#ethernet","network#wifi","network#vpn", "clock", "custom/poweroff","tray","custom/harvest"],
+        "modules-left": ["sway/workspaces","sway/mode","disk","battery#bat0", "custom/btbattery","custom/spotifyd", "pulseaudio","backlight", "idle_inhibitor"],
+        //"modules-left": ["sway/workspaces","sway/mode"],
+        //"modules-center": ["disk","battery#bat0", "custom/btbattery","custom/spotifyd", "pulseaudio","backlight", "idle_inhibitor"],
+
+        //"modules-center": ["sway/window"],
+        "modules-right": [ "network#phone","network#ethernet","network#wifi","network#vpn", "clock", "custom/poweroff","tray","custom/clockify"],
         "sway/window": {
             "format": "{} ︁",
             "on-click": "swaymsg kill"
@@ -165,20 +168,21 @@
             "format": "⏻",
             "on-click": "bash $HOME/.config/waybar/scripts/poweroff.sh"
         },
-        "custom/harvest": {
+        "custom/clockify": {
             "max-length":25,
             "format": "{icon} {}",
             "format-icons": {
                 "paused": " ",
                 "running": " ",
             },
-            "exec": "bash $HOME/.config/waybar/scripts/harvest.sh",
+            "exec": "bash $HOME/.config/waybar/scripts/clockify.sh",
             "return-type": "json",
             "interval": 10,
-            "on-click": "toolbox run timer-for-harvest",
+            "on-click": "$HOME/.config/waybar/scripts/clockify-toogle.sh",
+            "on-click-right": "xdg-open https://clockify.me/tracker"
         },
         "sway/mode": {
-            "format": "<span style=\"italic\">{}</span>"
+            "format": "<span style=\"italic\">mode:{}</span>"
         },
         "tray": {
             "icon-size": 13,
