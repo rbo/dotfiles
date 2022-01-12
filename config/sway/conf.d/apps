@@ -1,0 +1,44 @@
+
+# swaymsg -t get_tree | grep -E '(instance|app_id|class)'
+
+
+
+
+assign [instance="ferdi"] 10 $ws10
+
+
+
+# assign [instance="crx_mdpkiolbdkhdjpekfbkbmhigcaggjagi"] 10 $ws10
+# From: cat ~/.local/share/applications/chrome-..
+# exec /usr/lib/opt/google/chrome/google-chrome "--profile-directory=Profile 1" --app-id=mdpkiolbdkhdjpekfbkbmhigcaggjagi
+
+exec /usr/lib/opt/google/chrome/google-chrome "--profile-directory=Profile 1"
+assign [class="Google-chrome" instance="google-chrome"] 1 $ws1
+
+
+exec /usr/lib/opt/google/chrome/google-chrome "--profile-directory=Profile 1" --app="https://mail.google.com/mail/"
+assign [class="Google-chrome" instance="^mail.google.com__mail"] 2 $ws2
+
+
+exec /usr/lib/opt/google/chrome/google-chrome "--profile-directory=Profile 1" --app="https://calendar.google.com/calendar/"
+assign [class="Google-chrome" instance="calendar.google.com__calendar"] 3 $ws3
+
+
+#assign [instance="slack"] 10 $ws10
+#assign [app_id="org.telegram.desktop"] 10 $ws10
+#assign [class="Google-chrome" instance="^mail.google.com__chat"] 10 $ws10
+
+#assign [class="Google-chrome" instance="irc.bohne.io"] 10 $ws10
+
+#for_window [instance="slack"] focus, split h
+#for_window [app_id="org.telegram.desktop"] focus, split v
+#for_window [class="Google-chrome" instance="^mail.google.com__chat"] focus, split v
+#for_window [class="Google-chrome" instance="^irc.bohne.io"] focus, split v
+
+#exec flatpak run com.slack.Slack
+#exec /usr/lib/opt/google/chrome/google-chrome --app="https://mail.google.com/chat/" "--profile-directory=Profile 1"
+#exec flatpak run org.telegram.desktop
+#exec /usr/lib/opt/google/chrome/google-chrome --app="https://irc.bohne.io/" "--profile-directory=Profile 1"
+#
+
+exec flatpak run com.getferdi.Ferdi

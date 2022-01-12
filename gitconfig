@@ -1,6 +1,7 @@
 [user]
 	name = Robert Bohne
 	email = robert.bohne@redhat.com
+	signingkey = 9E8653F7D343455A
 [push]
   default = simple
 [core]
@@ -12,3 +13,17 @@
   bl = branch --list --all -vv
 [init]
 	defaultBranch = main
+[credential "https://github.com"]
+	helper =
+	helper = !/usr/bin/gh auth git-credential
+
+
+[pager]
+    diff = delta
+    log = delta
+    reflog = delta
+    show = delta
+
+#[interactive]
+#    diffFilter = delta --color-only --features=interactive
+

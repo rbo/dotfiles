@@ -25,8 +25,8 @@
         },
         "clock": {
             "interval": 1,
-            "format": "<b>{:%F %T (%l %p ) %Z}</b>",
             "format-alt": "{:%Y-%m-%d}",
+            "format": "{:%F %T (%l %p ) %Z}",
             "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
         },
         "cpu": {
@@ -69,26 +69,9 @@
                 "critical": 15
             },
             "format": "{icon} {capacity}%",
-            "formrt-charging": " : {icon} {capacity}%",
-            "formrt-discharging": "{icon} {capacity}%",
-            "format-plugged": " {capacity}%",
-            "format-empty": "  ",
-            "format-full": "  ",
-            "format-icons": ["", "", "", "", ""]
-        },
-        "battery#bat1": {
-            "bat": "BAT1",
-            "adapter": "AC",
-            "interval": 1,
-            "full-at": 99,
-            "states": {
-                "warning": 30,
-                "critical": 15
-            },
-            "format": "{icon} {capacity}%",
-            "formrt-charging": " : {icon} {capacity}%",
-            "formrt-discharging": "{icon} {capacity}%",
-            "format-plugged": " {capacity}%",
+            "format-charging": "  {capacity}%",
+            "format-discharging": "{icon} {capacity}%",
+            "format-plugged": "  {capacity}%",
             "format-empty": "  ",
             "format-full": "  ",
             "format-icons": ["", "", "", "", ""]
@@ -102,26 +85,26 @@
             "on-click": "nm-connection-editor"
         },
         "network#ethernet": {
-            "interface": "enp0s31*",
-            "format-ethernet": "  ",
+            "interface": "enp0s20f0u4u3u1",
+            "format-ethernet": "  ",
             "format-linked": "",
-            "format-disconnected": "  ",
+            "format-disconnected": "  ",
             "tooltip-format": "{ifname}: {ipaddr}/{cidr}",
             "on-click": "nm-connection-editor"
         },
         "network#wifi": {
             "interface": "wlp*",
             "format-ethernet": "",
-            "format-wifi": "  {essid} ({signalStrength}%)",
+            "format-wifi": "  ",
             "format-linked": "",
             "format-disconnected": "  ",
-            "tooltip-format": "{ifname}: {ipaddr}/{cidr}",
+            "tooltip-format": "{essid} ({signalStrength}%)\n\n{ifname}: {ipaddr}/{cidr}",
             "on-click": "nm-connection-editor"
         },
         "network#vpn": {
             "interface": "tun0",
-            "format": "︁ ",
-            "format-disconnected": " ︁",
+            "format": " ︁ ",
+            "format-disconnected": "  ",
             "tooltip-format": "{ifname}: {ipaddr}/{cidr}",
             "on-click": "nm-connection-editor"
         },
@@ -200,19 +183,22 @@
         }
     }
 //   ,{
-//        "name": "bottombar",
-//        "layer": "top",
-//        "position": "bottom",
-//        "height": 30,
-//        "modules-left": ["tray"],
-//        "modules-center": ["wlr/taskbar"],
-//        "modules-right": ["sway/workspaces", "sway/mode"],
+//        "name": "leftbar",
+//        "output": ["DP-5"],
+//        "layer": "bottom",
+//        "margin-bottom": 10,
+//        "position": "right",
+//     //    "modules-left": [],
+//     //    "modules-center": ["wlr/taskbar"],
+//        "modules-right": ["wlr/taskbar"],
 //        "tray": {
 //            "icon-size": 13,
 //            "spacing": 10
 //        },
 //        "wlr/taskbar": {
-//            "format": "{icon} {app_id}",
+//            "all-outputs": true,
+//            "markup": true,
+//            "format": "{app_id} {title} [{short_state}]",
 //            "icon-size": 13,
 //            "tooltip": false,
 //            "on-click": "activate",
