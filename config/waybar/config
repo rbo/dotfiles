@@ -109,7 +109,7 @@
             "on-click": "nm-connection-editor"
         },
         "network#phone": {
-            "interface": "enp0s20f0u2c4i2",
+            "interface": "enp0s20f0u*",
             "format": "  ",
             "format-disconnected": "  ",
             "tooltip-format": "{ifname}: {ipaddr}/{cidr}",
