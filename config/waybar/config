@@ -25,8 +25,8 @@
         },
         "clock": {
             "interval": 1,
-            "format-alt": "{:%Y-%m-%d}",
-            "format": "{:%F %T (%l %p ) %Z}",
+            "format-alt": "{:%F %T}",
+            "format": "{:%F %T ( %I %p ) %Z}",
             "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
         },
         "cpu": {
