@@ -1,5 +1,5 @@
 # Clipman
 #  https://github.com/yory8/clipman
-exec ~/.config/sway/clipman restore
-exec wl-paste -t text --watch ~/.config/sway/clipman store
-bindsym $mod+Insert exec ~/.config/sway/clipman  pick --notify -t wofi --primary
+#exec ~/.config/sway/clipman restore
+#exec wl-paste -t text --watch ~/.config/sway/clipman store
+#bindsym $mod+Insert exec ~/.config/sway/clipman  pick --notify -t wofi --primary

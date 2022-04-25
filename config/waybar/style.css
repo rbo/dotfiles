@@ -54,8 +54,11 @@ window#waybar.empty {
 }
 
 #mode {
-    background-color: #64727D;
-    border: 1px solid #ffffff;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
 }
 
 #backlight,

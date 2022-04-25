@@ -5,6 +5,6 @@ revert() {
 }
 trap revert SIGHUP SIGINT SIGTERM # How to fix this line?
 swaymsg "output * dpms off"
-swaylock -k -e -f -i  ~/.config/i3/background-redhat-2560x1440-lock.png
+swaylock -k -e -f -i  ~/.config/sway/background-redhat-1920x1200-lock.png
 revert
 

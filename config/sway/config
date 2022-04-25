@@ -188,7 +188,8 @@ bindcode 78 exec --no-startup-id ~/.config/sway/lock
 # 127
 bindcode 127 exec --no-startup-id ~/.config/sway/lock
 
-bindsym $mod+x move workspace to output right
+bindsym $mod+x exec swaymsg move workspace to output right || swaymsg move workspace to output down
+# bindsym $mod+x move workspace to output right
 
 # 75  -> Space
 #bindsym $mod+space exec --no-startup-id rofi -modi window,run,ssh,combi  -combi-modi window,drun,ssh -show combi
@@ -238,11 +239,13 @@ input * {
 # Ouput
 #
 #output "Sharp Corporation 0x144A 0x00000000" scale 2
-output "Chimei Innolux Corporation 0x14C9 0x00000000" pos 0 0
+output "Chimei Innolux Corporation 0x1417 0x00000000" pos 0 0
+output "Lenovo Group Limited P27q-20 V90825HY" pos 1920 0
 output "Dell Inc. DELL U2721DE 5RJ8023"      pos 1920 0
 output "Dell Inc. DELL U2715H GH85D68R0XRS"  pos 4480 0
 
-output * bg /home/$USER/.config/sway/background-redhat-3840x2160.png fit
+output * background /home/$USER/.config/sway/background-redhat-3840x2160.png fit #000000
+output "Chimei Innolux Corporation 0x1417 0x00000000" background /home/$USER/.config/sway/background-redhat-1920x1200.png fit #000000
 #
 
 mouse_warping none
