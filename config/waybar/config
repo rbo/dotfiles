@@ -85,7 +85,7 @@
             "on-click": "nm-connection-editor"
         },
         "network#ethernet": {
-            "interface": "enp0s20f0u4u3u1",
+            "interface": "enp0s20f0u6u3u1",
             "format-ethernet": "  ",
             "format-linked": "",
             "format-disconnected": "  ",
@@ -109,7 +109,7 @@
             "on-click": "nm-connection-editor"
         },
         "network#phone": {
-            "interface": "enp0s20f0u*",
+            "interface": "enp0s20f0u7c4i2",
             "format": "  ",
             "format-disconnected": "  ",
             "tooltip-format": "{ifname}: {ipaddr}/{cidr}",
