@@ -12,8 +12,10 @@ assign [instance="ferdi"] 10 $ws10
 # From: cat ~/.local/share/applications/chrome-..
 # exec /usr/lib/opt/google/chrome/google-chrome "--profile-directory=RedHat" --app-id=mdpkiolbdkhdjpekfbkbmhigcaggjagi
 
-exec /usr/lib/opt/google/chrome/google-chrome "--profile-directory=RedHat"
-assign [class="Google-chrome" instance="google-chrome"] 1 $ws1
+#exec /usr/lib/opt/google/chrome/google-chrome "--profile-directory=RedHat"
+#assign [class="Google-chrome" instance="google-chrome"] 1 $ws1
+exec /usr/bin/firefox-wayland --browser --profile ~/.mozilla/firefox/777lx4r8.rbohne-at-redhat-com
+assign [app_id="firefox-wayland"] 1 $ws1
 
 
 exec /usr/lib/opt/google/chrome/google-chrome   --profile-directory=RedHat --app="https://mail.google.com/mail/"

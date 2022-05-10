@@ -1,0 +1,2 @@
+for_window [title="Picture-in-Picture" app_id="^firefox"] floating enable
+for_window [title="Firefox — Sharing Indicator" app_id="^firefox"] floating enable
