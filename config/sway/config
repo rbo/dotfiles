@@ -19,7 +19,7 @@ bindsym XF86MonBrightnessDown exec --no-startup-id brightlight -d 100
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec alacritty
+bindsym $mod+Return exec foot
 #bindsym $mod+Return exec kitty
 
 # kill focused window
@@ -89,8 +89,10 @@ bindsym $mod+a focus parent
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
 set $ws1 "🌍"
-set $ws2 "📪"
-set $ws3 "📆"
+#set $ws2 "📪"
+#set $ws3 "📆"
+set $ws2 "Ⅱ"
+set $ws3 "Ⅲ"
 set $ws4 "Ⅳ"
 set $ws5 "Ⅴ"
 set $ws6 "Ⅵ"
@@ -99,15 +101,15 @@ set $ws8 "Ⅷ"
 set $ws9 "Ⅸ"
 set $ws10 "🗣"
 
-workspace $ws1 output DP-4 HDMI-A-2 eDP-1
-workspace $ws2 output DP-4 HDMI-A-2 eDP-1
-workspace $ws3 output DP-4 HDMI-A-2 eDP-1
-workspace $ws4 output DP-4 HDMI-A-2 eDP-1
+# workspace $ws1 output DP-4 HDMI-A-2 eDP-1
+# workspace $ws2 output DP-4 HDMI-A-2 eDP-1
+# workspace $ws3 output DP-4 HDMI-A-2 eDP-1
+# workspace $ws4 output DP-4 HDMI-A-2 eDP-1
 
-workspace $ws5 output eDP-1
-workspace $ws6 output DP-5
+# workspace $ws5 output eDP-1
+# workspace $ws6 output DP-5
 
-workspace $ws10 output DP-4 eDP-1
+# workspace $ws10 output DP-4 eDP-1
 
 
 # switch to workspace

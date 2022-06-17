@@ -75,7 +75,9 @@
     ~/.gnupg/gpg.conf:
         path: gnupg/gpg.conf
         create: true
-
+    ~/.config/foot:
+        path: config/foot/
+        create: true
 
 
 

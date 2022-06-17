@@ -2,12 +2,6 @@
 # swaymsg -t get_tree | grep -E '(instance|app_id|class)'
 
 
-
-
-assign [instance="ferdi"] 10 $ws10
-
-
-
 # assign [instance="crx_mdpkiolbdkhdjpekfbkbmhigcaggjagi"] 10 $ws10
 # From: cat ~/.local/share/applications/chrome-..
 # exec /usr/lib/opt/google/chrome/google-chrome "--profile-directory=RedHat" --app-id=mdpkiolbdkhdjpekfbkbmhigcaggjagi
@@ -18,16 +12,16 @@ exec /usr/bin/firefox-wayland --browser --profile ~/.mozilla/firefox/777lx4r8.rb
 assign [app_id="firefox-wayland"] 1 $ws1
 
 
-exec /usr/lib/opt/google/chrome/google-chrome   --profile-directory=RedHat --app="https://mail.google.com/mail/"
-assign [class="Google-chrome" instance="^mail.google.com__mail"] 2 $ws2
+#exec /usr/lib/opt/google/chrome/google-chrome   --profile-directory=RedHat --app="https://mail.google.com/mail/"
+#assign [class="Google-chrome" instance="^mail.google.com__mail"] 2 $ws2
 
 
-exec /usr/lib/opt/google/chrome/google-chrome --user-data-dir=$HOME/.config/google-mail/ --app="https://calendar.google.com/calendar/"
-assign [class="Google-chrome" instance="calendar.google.com__calendar"] 3 $ws3
+#exec /usr/lib/opt/google/chrome/google-chrome --user-data-dir=$HOME/.config/google-mail/ --app="https://calendar.google.com/calendar/"
+#assign [class="Google-chrome" instance="calendar.google.com__calendar"] 3 $ws3
 
 
-#assign [instance="slack"] 10 $ws10
-#assign [app_id="org.telegram.desktop"] 10 $ws10
+assign [instance="slack"] 10 $ws10
+assign [app_id="org.telegram.desktop"] 10 $ws10
 #assign [class="Google-chrome" instance="^mail.google.com__chat"] 10 $ws10
 
 #assign [class="Google-chrome" instance="irc.bohne.io"] 10 $ws10
@@ -43,4 +37,5 @@ assign [class="Google-chrome" instance="calendar.google.com__calendar"] 3 $ws3
 #exec /usr/lib/opt/google/chrome/google-chrome --app="https://irc.bohne.io/" "--profile-directory=RedHat"
 #
 
-exec flatpak run com.getferdi.Ferdi
+#assign [instance="ferdi"] 10 $ws10
+#exec flatpak run com.getferdi.Ferdi
