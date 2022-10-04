@@ -78,6 +78,10 @@
     ~/.config/foot:
         path: config/foot/
         create: true
+    ~/.config/swappy:
+        path: config/swappy/
+        create: true
+
 
 
 
