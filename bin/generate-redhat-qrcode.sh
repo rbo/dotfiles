@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-
+# info: https://source.redhat.com/departments/marketing/marketing_technology_and_operations/outfit/resources/branded_qr_code_generator
 #set -x
 
 URL="${1:-$(cat - )}"
