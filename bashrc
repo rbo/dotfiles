@@ -22,7 +22,7 @@ if [ -x "$(command -v powerline-go)" ]; then
     function _update_ps1() {
         rc=$?
         if [ -x "$(command -v powerline-go)" ]; then
-            export PS1="$(powerline-go -error $rc -max-width 80 -newline -colorize-hostname -modules "ssh,host,user,cwd,perms,git,kube,exit" -priority "ssh,host,cwd,exit,git,kube" -modules-right "time" )"
+            export PS1="$(powerline-go -error $rc -max-width 80 -newline -colorize-hostname -modules "ssh,host,user,cwd,perms,git,kube,exit" -priority "ssh,host,cwd,exit,git,kube" -modules-right "time" -condensed -shorten-openshift-names )"
         else
             export PS1="\u@\h:\w $ "
         fi
