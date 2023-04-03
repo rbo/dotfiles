@@ -11,7 +11,7 @@
         //"modules-center": ["disk","battery#bat0", "custom/btbattery","custom/spotifyd", "pulseaudio","backlight", "idle_inhibitor"],
 
         //"modules-center": ["sway/window"],
-        "modules-right": [ "network#phone","network#ethernet","network#wifi","network#vpn", "clock", "custom/poweroff","tray","custom/clockify"],
+        "modules-right": [ "network#phone","network#ethernet","network#wifi","network#vpn", "clock", "custom/poweroff","custom/darkman","tray"],
         "sway/window": {
             "format": "{} ︁",
             "on-click": "swaymsg kill"
@@ -85,10 +85,10 @@
             "on-click": "nm-connection-editor"
         },
         "network#ethernet": {
-            "interface": "enp0s20f0u6u3u1",
-            "format-ethernet": "  ",
+            "interface": "enp0*",
+            "format-ethernet": "  ",
             "format-linked": "",
-            "format-disconnected": "  ",
+            "format-disconnected": "  ",
             "tooltip-format": "{ifname}: {ipaddr}/{cidr}",
             "on-click": "nm-connection-editor"
         },
@@ -109,7 +109,7 @@
             "on-click": "nm-connection-editor"
         },
         "network#phone": {
-            "interface": "enp0s20f0u7c4i2",
+            "interface": "enp0s20f0u1c4i2",
             "format": "  ",
             "format-disconnected": "  ",
             "tooltip-format": "{ifname}: {ipaddr}/{cidr}",
@@ -163,6 +163,19 @@
             "interval": 10,
             "on-click": "$HOME/.config/waybar/scripts/clockify-toogle.sh",
             "on-click-right": "xdg-open https://clockify.me/tracker"
+        },
+        "custom/darkman": {
+            "max-length":25,
+            "format": "{icon}",
+            "format-icons": {
+                "dark": " 🌃 ",
+                "light": " 🌄 ",
+                "unknown": " ❓ "
+            },
+            "exec": "bash $HOME/.config/waybar/scripts/darkman.sh",
+            "return-type": "json",
+            "interval": 10,
+            "on-click": "/usr/bin/darkman toggle  >/dev/null",
         },
         "sway/mode": {
             "format": "<span style=\"italic\">mode:{}</span>"

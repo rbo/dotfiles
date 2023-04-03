@@ -121,6 +121,30 @@ window#waybar.empty {
     background: rgba(255, 234, 108, 0.5);
 }
 
+#custom-darkman.light {
+    padding: 0 6px;
+    margin: 2px;
+    color: #ffffff;
+    background: rgba(43, 48, 59, 1);
+    border-radius: 2px;
+}
+
+#custom-darkman.dark {
+    padding: 0 6px;
+    margin: 2px;
+    color: #ffffff;
+    background: rgba(43, 48, 59, 1);
+    border-radius: 2px;
+}
+
+#custom-darkman.unknown {
+    padding: 0 6px;
+    margin: 2px;
+    color: #ffffff;
+    background: rgba(255, 234, 108, 0.5);
+    border-radius: 2px;
+}
+
 
 #disk.critical {
     background: rgba(250, 0, 0, 0.5);
