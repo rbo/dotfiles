@@ -43,6 +43,25 @@ function unset-prompt() {
     export PS1="$ "
 }
 
+
+function get-argocd-admin-pw() {
+    oc get secrets -n openshift-gitops  openshift-gitops-cluster -o jsonpath="{.data.admin\.password}" | base64 -d
+    echo
+}
+
+function get-argocd() {
+    URL=$(oc get routes -n openshift-gitops openshift-gitops-server -o go-template="{{ .spec.host }}")
+    PW=$(oc get secrets -n openshift-gitops  openshift-gitops-cluster -o go-template='{{index .data "admin.password" | base64decode}}')
+
+    echo "ArgoCD"
+    echo "======"
+    echo "URL:  https://$URL/"
+    echo "User: admin"
+    echo "Pass: $PW"
+    echo
+    echo "argocd login --username admin $URL:443"
+    echo
+}
 alias cdate='date +"%F %T %z"'
 alias gs='git status'
 alias gb='git branch --color '
