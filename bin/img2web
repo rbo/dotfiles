@@ -1,0 +1,26 @@
+#!/bin/bash
+
+type convert 1>/dev/null
+if [ $? != 0 ]; then
+    echo "Please install ImageMagic"
+    exit 1;
+fi
+
+type exiftool 1>/dev/null
+if [ $? != 0 ]; then
+    echo "Please install exiftool";
+    exit 1;
+fi
+mkdir web
+for i in $@; do
+    src_img=$i;
+    trg_img=web/${src_img};
+    echo "$src_img -> $trg_img";
+    convert $src_img -resize 1024 $trg_img;
+    exiftool -all= $trg_img
+done;
+
+rm -v web/*_original
+touch web/*
+
+
