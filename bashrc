@@ -17,12 +17,12 @@ function _update_terminal_title() {
     echo -ne "\033]0;${USER}@${HOSTNAME%%.*}: ${PWD/#$HOME/~}\007"
 }
 
-
-if [ -x "$(command -v powerline-go)" ]; then
+ARCH=$(uname -m)
+if [ -x "$(command -v powerline-go-$ARCH)" ]; then
     function _update_ps1() {
         rc=$?
-        if [ -x "$(command -v powerline-go)" ]; then
-            export PS1="$(powerline-go -error $rc -max-width 80 -newline -colorize-hostname -modules "ssh,host,user,cwd,perms,git,kube,exit" -priority "ssh,host,cwd,exit,git,kube" -modules-right "time" -condensed -shorten-openshift-names )"
+        if [ -x "$(command -v powerline-go-$ARCH)" ]; then
+            export PS1="$(powerline-go-$ARCH -error $rc -max-width 80 -newline -colorize-hostname -modules "ssh,host,user,cwd,perms,git,kube,exit" -priority "ssh,host,cwd,exit,git,kube" -modules-right "time" -condensed -shorten-openshift-names )"
         else
             export PS1="\u@\h:\w $ "
         fi
@@ -78,4 +78,9 @@ alias ga='git add'
 [[ -f ~/dotfiles/secret/secret-env.sh ]] && source ~/dotfiles/secret/secret-env.sh
 [[ -f ~/bin/switch.sh ]] && source ~/bin/switch.sh
 
-
+export HOMEBREW_PREFIX="/opt/homebrew";
+export HOMEBREW_CELLAR="/opt/homebrew/Cellar";
+export HOMEBREW_REPOSITORY="/opt/homebrew";
+export PATH="/opt/homebrew/bin:/opt/homebrew/sbin${PATH+:$PATH}";
+export MANPATH="/opt/homebrew/share/man${MANPATH+:$MANPATH}:";
+export INFOPATH="/opt/homebrew/share/info:${INFOPATH:-}";
