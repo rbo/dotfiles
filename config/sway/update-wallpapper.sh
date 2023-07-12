@@ -1,7 +1,5 @@
 #!/usr/bin/env bash
 set -o pipefail
-set -x
-echo $1
 if [ -z "$1" ] ; then
     MODE=$(/usr/bin/darkman get)
 else

@@ -111,6 +111,7 @@ set $ws10 "🗣"
 
 # workspace $ws10 output DP-4 eDP-1
 
+# bindsym $mod+Shift+Up sticky toggle
 
 # switch to workspace
 bindsym $mod+1 workspace number 1 $ws1
@@ -241,13 +242,13 @@ input * {
 # Ouput
 #
 #output "Sharp Corporation 0x144A 0x00000000" scale 2
-output "Chimei Innolux Corporation 0x1417 0x00000000" pos 0 0
+output "Chimei Innolux Corporation 0x1417 Unknown" pos 0 0
 output "Lenovo Group Limited P27q-20 V90825HY" pos 1920 0
 output "Dell Inc. DELL U2721DE 5RJ8023"      pos 1920 0
 output "Dell Inc. DELL U2715H GH85D68R0XRS"  pos 4480 0
 
 output * background /home/$USER/.config/sway/background-redhat-3840x2160.png fit #000000
-output "Chimei Innolux Corporation 0x1417 0x00000000" background /home/$USER/.config/sway/background-redhat-1920x1200.png fit #000000
+output eDP-1 background /home/$USER/.config/sway/background-redhat-1920x1200.png fit #000000
 #
 
 mouse_warping none

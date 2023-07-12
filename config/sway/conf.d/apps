@@ -21,6 +21,7 @@ assign [app_id="firefox-wayland"] 1 $ws1
 
 
 assign [instance="slack"] 10 $ws10
+assign [instance="rambox"] 10 $ws10
 assign [app_id="org.telegram.desktop"] 10 $ws10
 #assign [class="Google-chrome" instance="^mail.google.com__chat"] 10 $ws10
 
