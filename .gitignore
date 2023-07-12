@@ -1,1 +1,3 @@
 config/environment.d/bitwarden.conf
+config/systemd/user/crc*
+config/systemd/user/default.target.wants/crc*
