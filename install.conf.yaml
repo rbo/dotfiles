@@ -66,9 +66,6 @@
     ~/.config/systemd:
         path: config/systemd/
         create: true
-    ~/.config/spotifyd:
-        path: config/spotifyd/
-        create: true
     ~/.gnupg/gpg-agent.conf:
         path: gnupg/gpg-agent.conf
         create: true
