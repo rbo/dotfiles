@@ -21,8 +21,12 @@ ARCH=$(uname -m)
 if [ -x "$(command -v powerline-go-$ARCH)" ]; then
     function _update_ps1() {
         rc=$?
-        if [ -x "$(command -v powerline-go-$ARCH)" ]; then
-            export PS1="$(powerline-go-$ARCH -error $rc -max-width 80 -newline -colorize-hostname -modules "ssh,host,user,cwd,perms,git,kube,exit" -priority "ssh,host,cwd,exit,git,kube" -modules-right "time" -condensed -shorten-openshift-names )"
+        if [ -x "$(command -v powerline-go)" ]; then
+            if [ -z "$TMUX" ]; then
+                export PS1="$(powerline-go -error $rc -max-width 80 -newline -colorize-hostname -modules "ssh,host,user,cwd,perms,git,kube,exit" -priority "ssh,host,cwd,exit,git,kube" -modules-right "time" -condensed -shorten-openshift-names )"
+            else
+                export PS1="$(powerline-go -error $rc -max-width 80 -newline -colorize-hostname -modules "user,perms,kube,exit" -priority "ssh,host,cwd,exit,git,kube" -condensed -shorten-openshift-names )"
+            fi
         else
             export PS1="\u@\h:\w $ "
         fi
