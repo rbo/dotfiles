@@ -10,7 +10,7 @@ window#waybar {
     background: transparent;
     color: #ffffff;
     transition-property: background-color;
-    transition-duration: .5s;
+    transition-duration: .100s;
 }
 
 window > box {
@@ -18,7 +18,8 @@ window > box {
     margin-bottom: 0px;
     margin-right: 10px;
     margin-left: 10px;
-    background-color: rgba(43, 48, 59, 0.3);
+    /* background-color: rgba(43, 48, 59, 0.3); */
+    background-color: rgba(0, 0, 0, 0.3);
     border: 1px solid #8F0000;
     color: white;
 }

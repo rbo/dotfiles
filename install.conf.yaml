@@ -81,6 +81,27 @@
     ~/.config/swappy:
         path: config/swappy/
         create: true
+    ~/.local/share/dark-mode.d:
+        path: config/darkman/dark-mode.d
+        create: true
+    ~/.local/share/light-mode.d:
+        path: config/darkman/light-mode.d
+        create: true
+    ~/.config/darkman/config.yaml:
+        path: config/darkman/config.yaml
+        create: true
+    ~/.config/tmux-powerline:
+        path: config/tmux-powerline
+        create: true
+    ~/.tmux-powerlinerc:
+        path: tmux-powerlinerc
+        create: true
+    ~/.tmux-powerlinerc.default:
+        path: tmux-powerlinerc.default
+        create: true
+
+
+
 
 
 

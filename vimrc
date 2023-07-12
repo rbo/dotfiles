@@ -82,13 +82,13 @@ nnoremap <C-l> <C-w>l
 nnoremap <C-t> :tabnew<cr>
 
 " kill trailing spaces
-nnoremap <leader>W :%s/\s\+$//<cr>:let @/=''<CR>
-nnoremap <leader>a :Ack
+" nnoremap <leader>W :%s/\s\+$//<cr>:let @/=''<CR>
+" nnoremap <leader>a :Ack
 
 if has('gui_running')
     " Don't show the toolbar
     set guioptions-=T
-    set guioptions-=m 
+    set guioptions-=m
     set guioptions-=r
     set guioptions-=L
     set anti enc=utf-8
@@ -104,5 +104,6 @@ endif
 " set term=xterm-256color
 " set background=dark
 
-autocmd BufWritePre * :%s/\s\+$//e
+" Remove trailing spaces
+" autocmd BufWritePre * :%s/\s\+$//e
 

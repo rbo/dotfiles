@@ -1,4 +1,5 @@
 
+invisible=1
 sort=-time
 
 layer=overlay
@@ -35,4 +36,3 @@ group-by=category
 invisible=1
 
 [mode=do-not-disturb]
-invisible=1

@@ -11,7 +11,7 @@
         //"modules-center": ["disk","battery#bat0", "custom/btbattery","custom/spotifyd", "pulseaudio","backlight", "idle_inhibitor"],
 
         //"modules-center": ["sway/window"],
-        "modules-right": [ "network#phone","network#ethernet","network#wifi","network#vpn", "clock", "custom/poweroff","custom/darkman","tray"],
+        "modules-right": [ "network#phone","network#ethernet","network#wifi","network#vpn", "clock", "custom/poweroff","custom/darkman","tray","custom/clockify"],
         "sway/window": {
             "format": "{} ︁",
             "on-click": "swaymsg kill"
