@@ -26,10 +26,14 @@ EOF
 
 TEMP=$( mktemp -d )
 mkdir -p $TEMP
+while oc get secrets -n default rbohne-admin -o jsonpath="{}" >> /dev/null; ret=$? ; [ $ret -ne 0 ] ; do
+    echo "Try to get token...";
+done;
 
-TOKEN=$( oc get  secrets rbohne-admin -o jsonpath="{.data.token}" | base64 --decode )
+TOKEN=$( oc get secrets -n default rbohne-admin -o jsonpath="{.data.token}" | base64 --decode );
+echo $TOKEN;
 
-oc get  secrets rbohne-admin -o jsonpath="{.data.ca\.crt}" | base64 --decode > ${TEMP}/ca.crt
+oc get secrets -n default rbohne-admin -o jsonpath="{.data.ca\.crt}" | base64 --decode > ${TEMP}/ca.crt
 
 SERVER=$( oc whoami --show-server )
 
