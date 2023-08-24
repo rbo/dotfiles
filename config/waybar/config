@@ -53,8 +53,8 @@
         "backlight": {
             "device": "intel_backlight",
             "interval": 1,
-            "on-scroll-down": "brightlight -pd 1",
-            "on-scroll-up": "brightlight -pi 1",
+            "on-scroll-down": "brightnessctl -q set 2-%",
+            "on-scroll-up": " brightnessctl -q set 2+%",
             "format": "{icon} {percent}%",
             "format-icons": ["", ""],
             "on-click": "wdisplays"
