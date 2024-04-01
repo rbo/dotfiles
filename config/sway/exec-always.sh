@@ -19,5 +19,7 @@ swayidle -w \
 #  timeout 30 'if pgrep swaylock; then swaymsg "output * dpms off"; fi' \
 #  resume 'if pgrep swaylock; then swaymsg "output * dpms on"; fi' \
 
+#systemctl --user import-environment
+
 #/usr/libexec/xdg-desktop-portal -r &
 #/usr/libexec/xdg-desktop-portal-wlr -r &

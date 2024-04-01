@@ -8,7 +8,7 @@
 
 #exec /usr/lib/opt/google/chrome/google-chrome "--profile-directory=RedHat"
 #assign [class="Google-chrome" instance="google-chrome"] 1 $ws1
-exec /usr/bin/firefox-wayland --browser --profile ~/.mozilla/firefox/777lx4r8.rbohne-at-redhat-com
+#exec /usr/bin/firefox-wayland --browser --profile ~/.mozilla/firefox/777lx4r8.rbohne-at-redhat-com
 assign [app_id="firefox-wayland"] 1 $ws1
 
 
@@ -21,6 +21,7 @@ assign [app_id="firefox-wayland"] 1 $ws1
 
 
 assign [instance="slack"] 10 $ws10
+assign [title="Google Chat - Chat"] 10 $ws10
 assign [instance="rambox"] 10 $ws10
 assign [app_id="org.telegram.desktop"] 10 $ws10
 #assign [class="Google-chrome" instance="^mail.google.com__chat"] 10 $ws10

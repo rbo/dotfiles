@@ -71,6 +71,7 @@ window#waybar.empty {
 #custom-poweroff,
 #custom-weather,
 #custom-clockify,
+#custom-network,
 #custom-btbattery,
 #custom-spotifyd,
 #disk,
@@ -108,6 +109,10 @@ window#waybar.empty {
 
 #network.disconnected {
     background: rgba(250, 0, 0, 0.5);
+}
+
+#custom-network.running {
+    background: rgba(0, 255, 0, 0.5);
 }
 
 #custom-clockify.running {

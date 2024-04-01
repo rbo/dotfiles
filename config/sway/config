@@ -10,8 +10,8 @@ exec --no-startup-id /usr/bin/mako
 bindsym XF86AudioRaiseVolume exec --no-startup-id amixer -q sset Master 3%+
 bindsym XF86AudioLowerVolume exec --no-startup-id amixer -q sset Master 3%-
 bindsym XF86AudioMute exec --no-startup-id amixer -q sset Master toggle
-bindsym XF86MonBrightnessUp exec --no-startup-id  brightnessctl -q set 10+% 
-bindsym XF86MonBrightnessDown exec --no-startup-id  brightnessctl -q set 10-% 
+bindsym XF86MonBrightnessUp exec --no-startup-id  brightnessctl -q set 10+%
+bindsym XF86MonBrightnessDown exec --no-startup-id  brightnessctl -q set 10-%
 
 #bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle
 
@@ -177,6 +177,8 @@ exec_always --no-startup-id ~/.config/sway/exec-always.sh
 #    swaymsg -t get_tree | grep -E '(instance|app_id)'
 for_window [instance="timer-for-harvest"] floating enable
 for_window [instance="gnome-control-center"] floating enable
+for_window [app_id="nmtui"] floating enable
+for_window [app_id="nmtui"] border normal 1
 
 # for_window [instance="spotify"] move scratchpad
 
@@ -206,8 +208,10 @@ bindsym $mod+minus scratchpad show
 
 bindsym $mod+c exec --no-startup-id ~/.config/waybar/scripts/clockify-toogle.sh
 
-default_border pixel
+default_border pixel 1
 default_floating_border normal
+titlebar_border_thickness 1
+
 smart_gaps off
 smart_borders off
 gaps inner 10
@@ -222,13 +226,18 @@ client.background       #ffffff
 
 bar {
         swaybar_command waybar
+        font "DejaVu Sans Condensed"
+        gaps 5
+        pango_markup enabled
         #mode hide
         #status_command i3status-rs ~/.config/i3/i3status-rs.conf
-        #position top
-        #colors {
-        #    active_workspace #F56D6D #8F0000 #ffffff
-        #    focused_workspace #F56D6D #8F0000 #ffffff
-        #}
+        position top
+        colors {
+            background #000000AA
+            active_workspace #F56D6D #8F0000 #ffffff
+            focused_workspace #F56D6D #8F0000 #ffffff
+            urgent_workspace #2f343a #EE0000 #ffffff
+        }
 }
 
 

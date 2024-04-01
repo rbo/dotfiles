@@ -2,19 +2,18 @@
     {
         "name": "topbar",
         "layer": "top",
-        // swaymsg -t get_outputs | jq '.[] | .name'
-        // "output": ["eDP-1","DP-4","DP-5","DP-6","DP-7"],
         "position": "top",
-        "height": 40,
-        "modules-left": ["sway/workspaces","sway/mode","disk","battery#bat0", "custom/btbattery","custom/spotifyd", "pulseaudio","backlight", "idle_inhibitor"],
-        //"modules-left": ["sway/workspaces","sway/mode"],
-        //"modules-center": ["disk","battery#bat0", "custom/btbattery","custom/spotifyd", "pulseaudio","backlight", "idle_inhibitor"],
-
-        //"modules-center": ["sway/window"],
-        "modules-right": [ "network#phone","network#ethernet","network#wifi","network#vpn", "clock", "custom/poweroff","custom/darkman","tray","custom/clockify"],
+        "height": 46,
+        "modules-left": ["sway/workspaces","sway/mode","battery#bat0","pulseaudio","backlight","idle_inhibitor"],
+        "modules-center": ["sway/window"],
+        "modules-right": [ "custom/network", "clock", "custom/darkman","custom/poweroff","tray","custom/clockify"],
         "sway/window": {
-            "format": "{} ︁",
-            "on-click": "swaymsg kill"
+            "format": "{}",
+        },
+        "custom/poweroff": {
+            "tooltip": false,
+            "format": "⏻",
+            "on-click": "bash $HOME/.config/waybar/scripts/poweroff.sh"
         },
         "idle_inhibitor": {
             "format": "{icon}",
@@ -22,33 +21,6 @@
                 "activated": "",
                 "deactivated": ""
             }
-        },
-        "clock": {
-            "interval": 1,
-            "format-alt": "{:%F %T}",
-            "format": "{:%F %T ( %I %p ) %Z}",
-            "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
-        },
-        "cpu": {
-            "format": "︁ {usage}%",
-            "tooltip": false
-        },
-        "disk": {
-            "format": "  {free} ",
-            "states": {
-                "warning": 85,
-                "critical": 95
-            },
-            "tooltip-format": "{used} of {total} used"
-        },
-        "memory": {
-            "format": "︁ {}%",
-            "tooltip-format": "{used:0.1f}G / {total:0.1f}G used"
-        },
-        "temperature": {
-            "critical-threshold": 80,
-            "format": "{icon} {temperatureC}°C",
-            "format-icons": ["", "", "", "", ""]
         },
         "backlight": {
             "device": "intel_backlight",
@@ -58,6 +30,19 @@
             "format": "{icon} {percent}%",
             "format-icons": ["", ""],
             "on-click": "wdisplays"
+        },
+        "clock": {
+            "interval": 1,
+            "format-alt": "{:%F %T}",
+            "format": "{:%F %T ( %I %p ) %Z}",
+            "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
+        },
+        "sway/mode": {
+            "format": "<span style=\"italic\">mode:{}</span>"
+        },
+        "tray": {
+            "icon-size": 13,
+            "spacing": 10
         },
         "battery#bat0": {
             "bat": "BAT0",
@@ -76,44 +61,42 @@
             "format-full": "  ",
             "format-icons": ["", "", "", "", ""]
         },
-        "network#disconnected": {
-            "tooltip-format": "No connection!",
-            "format-ethernet": "",
-            "format-wifi": "",
-            "format-linked": "",
-            "format-disconnected": "",
-            "on-click": "nm-connection-editor"
+        "custom/clockify": {
+            "max-length":25,
+            "format": "{icon} {}",
+            "format-icons": {
+                "paused": " ",
+                "running": " ",
+            },
+            "exec": "bash $HOME/.config/waybar/scripts/clockify.sh",
+            "return-type": "json",
+            "interval": 10,
+            "on-click": "$HOME/.config/waybar/scripts/clockify-toogle.sh",
+            "on-click-right": "xdg-open https://clockify.me/tracker"
         },
-        "network#ethernet": {
-            "interface": "enp0*",
-            "format-ethernet": "  ",
-            "format-linked": "",
-            "format-disconnected": "  ",
-            "tooltip-format": "{ifname}: {ipaddr}/{cidr}",
-            "on-click": "nm-connection-editor"
+        "custom/network":{
+            "max-length":50,
+            "format": "{icon} {}",
+            "format-icons": {
+                "running": "🖧",
+            },
+            "exec": "bash $HOME/.config/waybar/scripts/network.sh",
+            "return-type": "json",
+            "interval": 10,
+            "on-click": "foot -T NetworkManager --window-size-chars 120x40 -a nmtui nmtui",
         },
-        "network#wifi": {
-            "interface": "wlp*",
-            "format-ethernet": "",
-            "format-wifi": "  ",
-            "format-linked": "",
-            "format-disconnected": "  ",
-            "tooltip-format": "{essid} ({signalStrength}%)\n\n{ifname}: {ipaddr}/{cidr}",
-            "on-click": "nm-connection-editor"
-        },
-        "network#vpn": {
-            "interface": "tun0",
-            "format": " ︁ ",
-            "format-disconnected": "  ",
-            "tooltip-format": "{ifname}: {ipaddr}/{cidr}",
-            "on-click": "nm-connection-editor"
-        },
-        "network#phone": {
-            "interface": "enp0s20f0u1c4i2",
-            "format": "  ",
-            "format-disconnected": "  ",
-            "tooltip-format": "{ifname}: {ipaddr}/{cidr}",
-            "on-click": "nm-connection-editor"
+        "custom/darkman": {
+            "max-length":25,
+            "format": "{icon}",
+            "format-icons": {
+                "dark": " 🌃 ",
+                "light": " 🌄 ",
+                "unknown": " ❓ "
+            },
+            "exec": "bash $HOME/.config/waybar/scripts/darkman.sh",
+            "return-type": "json",
+            "interval": 10,
+            "on-click": "/usr/bin/darkman toggle  >/dev/null",
         },
         "pulseaudio": {
             "scroll-step": 1,
@@ -130,95 +113,7 @@
                 "car": "",
                 "default": ["", "", ""]
             },
-            "on-click": "pavucontrol"
+            "on-click": "GTK_THEME=Adwaita:dark pavucontrol"
         },
-        // https://github.com/seabassapologist/gobbl
-        "custom/btbattery": {
-            "format": "{}",
-            "exec": "$HOME/.config/waybar/scripts/gobbl -w -i",
-            "return-type": "json",
-            "on-click": "$HOME/.config/waybar/scripts/gobbl -w -i",
-            "interval": 500
-        },
-        "custom/weather": {
-            "return-type": "json",
-            "exec": "bash $HOME/.config/waybar/scripts/weather.sh",
-            "interval": 300,
-            "on-click": "xdg-open https://wttr.in"
-        },
-        "custom/poweroff": {
-            "tooltip": false,
-            "format": "⏻",
-            "on-click": "bash $HOME/.config/waybar/scripts/poweroff.sh"
-        },
-        "custom/clockify": {
-            "max-length":25,
-            "format": "{icon} {}",
-            "format-icons": {
-                "paused": " ",
-                "running": " ",
-            },
-            "exec": "bash $HOME/.config/waybar/scripts/clockify.sh",
-            "return-type": "json",
-            "interval": 10,
-            "on-click": "$HOME/.config/waybar/scripts/clockify-toogle.sh",
-            "on-click-right": "xdg-open https://clockify.me/tracker"
-        },
-        "custom/darkman": {
-            "max-length":25,
-            "format": "{icon}",
-            "format-icons": {
-                "dark": " 🌃 ",
-                "light": " 🌄 ",
-                "unknown": " ❓ "
-            },
-            "exec": "bash $HOME/.config/waybar/scripts/darkman.sh",
-            "return-type": "json",
-            "interval": 10,
-            "on-click": "/usr/bin/darkman toggle  >/dev/null",
-        },
-        "sway/mode": {
-            "format": "<span style=\"italic\">mode:{}</span>"
-        },
-        "tray": {
-            "icon-size": 13,
-            "spacing": 10
-        },
-        // https://github.com/seabassapologist/untitled-spotifyd-controller
-        "custom/spotifyd": {
-            "format": " {}",
-            "return-type": "json",
-            "exec": "$HOME/.config/waybar/scripts/untitled-spotifyd-controller -o waybar",
-            "on-click": "$HOME/.config/waybar/scripts/untitled-spotifyd-controller -c PlayPause",
-            "on-click-right": "$HOME/.config/waybar/scripts/untitled-spotifyd-controller -c Next",
-            "on-click-middle": "$HOME/.config/waybar/scripts/untitled-spotifyd-controller -c Previous",
-            "interval": 2
-        }
     }
-//   ,{
-//        "name": "leftbar",
-//        "output": ["DP-5"],
-//        "layer": "bottom",
-//        "margin-bottom": 10,
-//        "position": "right",
-//     //    "modules-left": [],
-//     //    "modules-center": ["wlr/taskbar"],
-//        "modules-right": ["wlr/taskbar"],
-//        "tray": {
-//            "icon-size": 13,
-//            "spacing": 10
-//        },
-//        "wlr/taskbar": {
-//            "all-outputs": true,
-//            "markup": true,
-//            "format": "{app_id} {title} [{short_state}]",
-//            "icon-size": 13,
-//            "tooltip": false,
-//            "on-click": "activate",
-//            "on-click-right": "close"
-//        },
-//        "sway/mode": {
-//            "format": "<span style=\"italic\">{}</span>"
-//        }
-//    }
 ]
