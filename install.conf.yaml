@@ -96,7 +96,12 @@
     ~/.tmux-powerlinerc.default:
         path: tmux-powerlinerc.default
         create: true
-
+    ~/Library/Application Support/k9s/config.yaml:
+        path: k9s/config.yaml
+        create: true
+    ~/Library/Application Support/k9s/skins/default.yaml:
+        path: k9s/skins/default.yaml
+        create: true
 
 
 
