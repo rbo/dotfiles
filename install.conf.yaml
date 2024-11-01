@@ -12,84 +12,103 @@
   - [git submodule update --init --recursive, Installing submodules]
 
 - link:
-    ~/.profile: profile
-    ~/.bash_profile: bash_profile
-    ~/.bashrc: bashrc
-    ~/.bash_logout: bash_logout
+    # ~/.profile: profile
+    # ~/.bash_profile: bash_profile
+    # ~/.bashrc: bashrc
+    # ~/.bash_logout: bash_logout
+    ~/.zprofile: .zprofile
+    ~/.zshrc: .zshrc
+    ~/.p10k.zsh: .p10k.zsh
     ~/.gitconfig: gitconfig
     ~/.ssh/config:
         path: secret/ssh/config
         create: true
     ~/.tmux.conf: tmux.conf
-    ~/.clockify-cli.yaml: secret/clockify-cli.yaml
+    # ~/.clockify-cli.yaml: secret/clockify-cli.yaml
     ~/.vimrc: vimrc
     ~/bin:
         path: bin/
         create: true
-    ~/.Xmodmap: Xmodmap
-    ~/.config/i3:
-        path: config/i3/
-        create: true
-    ~/.config/rofi:
-        path: config/rofi/
-        create: true
-    ~/.config/kitty:
-        path: config/kitty/
-        create: true
-    ~/.config/bash_completion: config/bash_completion
-    ~/.config/bash_completion.d:
-        path: config/bash_completion.d/
-        create: true
-    ~/.config/environment.d:
-        path: config/environment.d/
-        create: true
-    ~/.config/sway:
-        path: config/sway/
-        create: true
-    ~/.config/waybar:
-        path: config/waybar/
-        create: true
-    ~/.config/mako:
-        path: config/mako/
-        create: true
-    ~/.config/wofi:
-        path: config/wofi/
-        create: true
-    ~/.config/pkcs11:
-        path: config/pkcs11/
-        create: true
+    # ~/.Xmodmap: Xmodmap
+    # ~/.config/i3:
+    #     path: config/i3/
+    #     create: true
+    # ~/.config/rofi:
+    #     path: config/rofi/
+    #     create: true
+    # ~/.config/kitty:
+    #     path: config/kitty/
+    #     create: true
+    # ~/.config/bash_completion: config/bash_completion
+    # ~/.config/bash_completion.d:
+    #     path: config/bash_completion.d/
+    #     create: true
+    # ~/.config/environment.d:
+    #     path: config/environment.d/
+    #     create: true
+    # ~/.config/sway:
+    #     path: config/sway/
+    #     create: true
+    # ~/.config/waybar:
+    #     path: config/waybar/
+    #     create: true
+    # ~/.config/mako:
+    #     path: config/mako/
+    #     create: true
+    # ~/.config/wofi:
+    #     path: config/wofi/
+    #     create: true
+    # ~/.config/pkcs11:
+    #     path: config/pkcs11/
+    #     create: true
     ~/.config/gmail-yaml-filters:
         path: secret/gmail-yaml-filters/
         create: true
-    ~/.config/imv:
-        path: config/imv/
-    ~/.config/systemd:
-        path: config/systemd/
+    # ~/.config/imv:
+    #     path: config/imv/
+    # ~/.config/systemd:
+    #     path: config/systemd/
+    #     create: true
+    # ~/.gnupg/gpg-agent.conf:
+    #     path: gnupg/gpg-agent.conf
+    #     create: true
+    # ~/.gnupg/gpg.conf:
+    #     path: gnupg/gpg.conf
+    #     create: true
+    # ~/.config/foot:
+    #     path: config/foot/
+    #     create: true
+    # ~/.config/swappy:
+    #     path: config/swappy/
+    #     create: true
+    # ~/.local/share/dark-mode.d:
+    #     path: config/darkman/dark-mode.d
+    #     create: true
+    # ~/.local/share/light-mode.d:
+    #     path: config/darkman/light-mode.d
+    #     create: true
+    # ~/.config/darkman/config.yaml:
+    #     path: config/darkman/config.yaml
+    #     create: true
+    ~/.config/alacritty:
+        path: config/alacritty/
         create: true
-    ~/.gnupg/gpg-agent.conf:
-        path: gnupg/gpg-agent.conf
+    ~/.config/yabai:
+        path: config/yabai/
         create: true
-    ~/.gnupg/gpg.conf:
-        path: gnupg/gpg.conf
-        create: true
-    ~/.config/foot:
-        path: config/foot/
-        create: true
-    ~/.config/swappy:
-        path: config/swappy/
-        create: true
-    ~/.local/share/dark-mode.d:
-        path: config/darkman/dark-mode.d
-        create: true
-    ~/.local/share/light-mode.d:
-        path: config/darkman/light-mode.d
-        create: true
-    ~/.config/darkman/config.yaml:
-        path: config/darkman/config.yaml
+    ~/.config/skhd:
+        path: config/skhd/
         create: true
     ~/.config/tmux-powerline:
         path: config/tmux-powerline
         create: true
+    ~/.config/k9s:
+        path: config/k9s
+        create: true
+    ~/.tmux:
+        path: tmux
+        create: true
+    ~/.tmux-powerlinerc:
     ~/.tmux-powerlinerc:
         path: tmux-powerlinerc
         create: true

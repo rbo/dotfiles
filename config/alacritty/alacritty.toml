@@ -1,0 +1,26 @@
+[env]
+TERM = "xterm-256color"
+
+[window]
+padding.x = 10
+padding.y = 10
+
+decorations = "Buttonless"
+
+opacity = 0.9
+blur = true
+
+option_as_alt = "Both"
+
+[font]
+normal.family = "SauceCodePro Nerd Font Mono"
+# normal.family = "MesloLGS NF"
+normal.style = "Light"
+size = 18
+
+[colors.primary]
+background = '#353535'
+foreground = '#f2f2f2'
+
+[cursor.style]
+shape = "Beam"
