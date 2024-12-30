@@ -93,6 +93,9 @@
     ~/.config/alacritty:
         path: config/alacritty/
         create: true
+    ~/.config/ghostty:
+        path: config/ghostty/
+        create: true
     ~/.config/yabai:
         path: config/yabai/
         create: true

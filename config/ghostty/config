@@ -1,0 +1,9 @@
+macos-titlebar-style = hidden
+theme = "Apple System Colors"
+font-family = "SauceCodePro NFM Light"
+font-size=18
+cursor-style = bar
+background-opacity = 0.9
+background-blur-radius = 20
+
+keybind = global:ctrl+grave_accent=toggle_quick_terminal
