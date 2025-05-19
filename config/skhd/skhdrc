@@ -1,8 +1,8 @@
 # change window focus within space
-alt - left : yabai -m window --focus west || yabai -m display --focus west
-alt - right : yabai -m window --focus east || yabai -m display --focus east
-alt - up : yabai -m window --focus north || yabai -m display --focus north
-alt - down : yabai -m window --focus south || yabai -m display --focus south
+ctrl - left : yabai -m window --focus west || yabai -m display --focus west
+ctrl - right : yabai -m window --focus east || yabai -m display --focus east
+ctrl - up : yabai -m window --focus north || yabai -m display --focus north
+ctrl - down : yabai -m window --focus south || yabai -m display --focus south
 
 # swap windows
 shift + alt - down : yabai -m window --swap south
@@ -61,7 +61,8 @@ shift + alt - 6 : yabai -m window --space 6;
 shift + alt - 7 : yabai -m window --space 7;
 
 # open terminal, blazingly fast compared to iTerm/Hyper
-alt - return : /Applications/Alacritty.app//Contents/MacOS/alacritty
+# alt - return : /Applications/Alacritty.app//Contents/MacOS/alacritty
+alt - return : open -n /Applications/Ghostty.app
 
 shift + alt - h : yabai -m window --resize right:-20:0 2> /dev/null || yabai -m window --resize left:-20:0 2> /dev/null
 shift + alt - j : yabai -m window --resize bottom:0:20 2> /dev/null || yabai -m window --resize top:0:20 2> /dev/null
