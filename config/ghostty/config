@@ -1,9 +1,19 @@
-macos-titlebar-style = hidden
+macos-titlebar-style = native
 theme = "Apple System Colors"
-font-family = "SauceCodePro NFM Light"
+# font-family = "SauceCodePro NF Light"
+font-family = "Red Hat Mono"
 font-size=18
 cursor-style = bar
 background-opacity = 0.9
 background-blur-radius = 20
 
 keybind = global:ctrl+grave_accent=toggle_quick_terminal
+quick-terminal-position = center
+quick-terminal-screen = mouse
+quick-terminal-animation-duration = 0
+
+term = "xterm-256color"
+
+quit-after-last-window-closed = "true"
+
+keybind = super+enter=unbind
