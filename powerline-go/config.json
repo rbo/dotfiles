@@ -1,0 +1,19 @@
+{
+  "cwd-mode": "fancy",
+  "cwd-max-depth": 2,
+  "hostname-only-if-ssh": true,
+  "max-width": 80,
+  "colorize-hostname": true,
+  "modules": [
+      "ssh",
+      "host",
+      "user",
+      "cwd",
+      "perms",
+      "git",
+      "kube",
+      "exit"
+  ],
+  "priority": ["host","cwd","exit","git","kube"],
+  "shorten-openshift-names": true
+}
