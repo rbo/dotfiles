@@ -105,6 +105,9 @@
     ~/.config/tmux-powerline:
         path: config/tmux-powerline
         create: true
+    ~/.config/powerline-go:
+        path: config/powerline-go
+        create: true
     ~/.config/k9s:
         path: config/k9s
         create: true
