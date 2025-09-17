@@ -1,5 +1,5 @@
 macos-titlebar-style = native
-theme = "Apple System Colors"
+theme = "dark:Apple System Colors,light:Apple System Colors Light"
 # font-family = "SauceCodePro NF Light"
 font-family = "Red Hat Mono"
 font-size=18
